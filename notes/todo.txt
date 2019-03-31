@@ -1,0 +1,2 @@
+Fake (context) keywords, operators, attributes -> keywords.txt
+Fancy "indentationRules" -> language-configuration.json
