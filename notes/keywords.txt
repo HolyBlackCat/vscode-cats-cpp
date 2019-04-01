@@ -23,17 +23,64 @@ keyword
             .throw
                 throw
     .operator
-        and
-        and_eq
-        bitand
-        bitor
-        compl
-        not
-        not_eq
-        or
-        or_eq
-        xor
-        xor_eq
+        .word
+            and
+            and_eq
+            bitand
+            bitor
+            compl
+            not
+            not_eq
+            or
+            or_eq
+            xor
+            xor_eq
+        .symbol
+            .scope
+                ::
+            .member
+                .
+                ->
+            .other
+                ++
+                --
+                !
+                &&
+                ||
+                ~
+                &
+                ^
+                |
+                <<
+                >>
+                *
+                /
+                %
+                +
+                -
+                <=>
+                <
+                <=
+                >
+                >=
+                ==
+                !=
+                =
+            .ternary
+                ?
+                :
+            .comma
+                ,
+            .bracket
+                .round
+                    (
+                    )
+                .curly
+                    {
+                    }
+                .square
+                    [
+                    ]
     .other
         .memory
             new
@@ -50,11 +97,15 @@ keyword
         .decltype
             decltype
         .cast
-            const_cast
-            dynamic_cast
-            reinterpret_cast
-            static_cast
-        .labels
+            .const
+                const_cast
+            .dyn
+                dynamic_cast
+            .re
+                reinterpret_cast
+            .static
+                static_cast
+        .label
             .control
                 case
                 default
@@ -127,14 +178,13 @@ storage
                 constexpr
             .eval
                 consteval
-        .func
+        .other
 			.virt
 				virtual
 			.explicit
 				explicit
 			.inline
 				inline
-        .var
 			.mutable
 				mutable
 			.alignas
@@ -148,3 +198,111 @@ constant.language
         this
     .nullptr
         nullptr
+
+------------- Context-sensitive -------------
+
+keyword.other
+    .override
+        override
+    .final
+        final
+    .audit
+        audit
+    .axiom
+        axiom
+    .import
+        import
+    .module
+        module
+
+------------- Attributes -------------
+[[
+storage.modifier
+    .attrib
+        .noret
+            noreturn
+        .carries_dep
+            carries_dependency
+        .depr
+            deprecated
+        .fall
+            fallthrough
+        .use
+            nodiscard
+        .unused
+            maybe_unused
+        .expr
+            likely
+            unlikely
+        .no_uniq_addr
+            no_unique_address
+        .contract
+            expects
+            ensures
+            assert
+]]
+
+------------- Preprocessor -------------
+
+keyword.other.pp
+    .dir
+        #if
+        #elif
+        #else
+        #endif
+        #ifdef
+        #ifndef
+        #define
+        #undef
+        #include
+        #line
+        #error
+        #pragma
+    .dir_op
+        defined
+        __has_include
+        __has_cpp_attribute
+    .func
+        _Pragma
+    .const
+        .mandatory
+            __cplusplus
+            __STDC_HOSTED__
+            __FILE__
+            __LINE__
+            __DATE__
+            __TIME__
+            __STDCPP_DEFAULT_NEW_ALIGNMENT__
+        .optional
+            __STDC__
+            __STDC_VERSION__
+            __STDC_ISO_10646__
+            __STDC_MB_MIGHT_NEQ_WC__
+            __STDCPP_STRICT_POINTER_SAFETY__
+            __STDCPP_THREADS__
+            __cpp_[A-Za-z0-9_]*
+
+//fff \
+fff
+
+// fff
+fff
+
+#if       1 == 1##2
+#elif     1 == 1##2
+#else
+#endif
+#ifdef    FOO
+#ifndef   FOO
+#define
+#define   FOO 123  \
+fff
+fff
+#define   FOO(a,b,c) 123##45
+#undef
+#include "ff"
+#include <ff>
+#include
+#line
+#error
+#pragma

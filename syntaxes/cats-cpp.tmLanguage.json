@@ -3,19 +3,220 @@
 	"name": "C++ :3",
 	"patterns": [
 		{
-			"include": "#keywords"
-		},
-		{
-			"include": "#strings"
-		}
+			"include": "#generic"
+        },
+        {
+            "include": "#pp"
+        }
 	],
 	"repository": {
-		"keywords": {
-			"patterns": [{
-				"name": "keyword.control.cats-cpp",
-				"match": "\\b(if|while|for|return)\\b"
-			}]
-		},
+		"generic": {
+			"patterns": [
+                {
+                    "include": "#line_cont"
+                },
+                {
+                    "include": "#comments"
+                },
+                {
+                    "include": "#strings"
+                },
+
+                {
+                    "name": "meta.attribute.region",
+                    "contentName": "meta.attribute.content",
+                    "begin": "(\\[\\[)",
+                    "end": "(\\]\\])",
+                    "captures": {"1":{"name":"meta.attribute.bracket"}},
+                    "patterns": [{"include": "#generic"}, {"include": "#attribs"}]
+                },
+
+                {"name": "keyword.control.multiline.branch"       , "match": "\\b(if|else|switch)\\b"},
+                {"name": "keyword.control.multiline.loop"         , "match": "\\b(for|while|do)\\b"},
+                {"name": "keyword.control.multiline.ex"           , "match": "\\b(try|catch)\\b"},
+                {"name": "keyword.control.oneline.goto"           , "match": "\\bgoto\\b"},
+                {"name": "keyword.control.oneline.loop"           , "match": "\\b(break|continue)\\b"},
+                {"name": "keyword.control.oneline.return"         , "match": "\\breturn\\b"},
+                {"name": "keyword.control.oneline.throw"          , "match": "\\bthrow\\b"},
+                {"name": "keyword.operator.word"                  , "match": "\\b(and|and_eq|bitand|bitor|compl|not|not_eq|or|or_eq|xor|xor_eq)\\b"},
+                {"name": "keyword.operator.symbol.scope"          , "match": "::"},
+                {"name": "keyword.operator.symbol.member"         , "match": "(\\.|->)"},
+                {"name": "keyword.operator.symbol.other"          , "match": "[\\/!~&^|*%<>=+-]"},
+                {"name": "keyword.operator.symbol.ternary"        , "match": "[\\?:]"},
+                {"name": "keyword.operator.symbol.comma"          , "match": ","},
+                {"name": "keyword.operator.symbol.bracket.round"  , "match": "[()]"},
+                {"name": "keyword.operator.symbol.bracket.curly"  , "match": "[{}]"},
+                {"name": "keyword.operator.symbol.bracket.square" , "match": "[\\[\\]]"},
+                {"name": "keyword.other.memory"                   , "match": "\\b(new|delete)\\b"},
+                {"name": "keyword.other.co"                       , "match": "\\b(co_await|co_return|co_yield)\\b"},
+                {"name": "keyword.other.type_property"            , "match": "\\b(alignof|sizeof)\\b"},
+                {"name": "keyword.other.typeid"                   , "match": "\\btypeid\\b"},
+                {"name": "keyword.other.decltype"                 , "match": "\\bdecltype\\b"},
+                {"name": "keyword.other.cast.const"               , "match": "\\bconst_cast\\b"},
+                {"name": "keyword.other.cast.dyn"                 , "match": "\\bdynamic_cast\\b"},
+                {"name": "keyword.other.cast.re"                  , "match": "\\breinterpret_cast\\b"},
+                {"name": "keyword.other.cast.static"              , "match": "\\bstatic_cast\\b"},
+                {"name": "keyword.other.cast.static"              , "match": "\\bstatic_cast\\b"},
+                {"name": "keyword.other.label.control"            , "match": "\\b(case|default)\\b"},
+                {"name": "keyword.other.label.access"             , "match": "\\b(private|protected|public)\\b"},
+                {"name": "keyword.other.special.asm"              , "match": "\\basm\\b"},
+                {"name": "keyword.other.special.typename"         , "match": "\\btypename\\b"},
+                {"name": "keyword.other.special.noexcept"         , "match": "\\bnoexcept\\b"},
+                {"name": "keyword.other.special.requires"         , "match": "\\brequires\\b"},
+                {"name": "keyword.other.special.friend"           , "match": "\\bfriend\\b"},
+                {"name": "keyword.other.special.static_assert"    , "match": "\\bstatic_assert\\b"},
+                {"name": "keyword.other.reserved"                 , "match": "\\bregister\\b"},
+                {"name": "storage.type.type.auto"                 , "match": "\\bauto\\b"},
+                {"name": "storage.type.type.void"                 , "match": "\\bvoid\\b"},
+                {"name": "storage.type.type.sign"                 , "match": "\\b(signed|unsigned)\\b"},
+                {"name": "storage.type.type.other"                , "match": "\\b(double|float|short|int|long|char|char8_t|char16_t|char32_t|wchar_t|bool)\\b"},
+                {"name": "storage.type.category"                  , "match": "\\b(enum|namespace|operator|class|union|struct|using|typedef|concept|template)\\b"},
+                {"name": "storage.modifier.cv.const"              , "match": "\\bconst\\b"},
+                {"name": "storage.modifier.cv.volatile"           , "match": "\\bvolatile\\b"},
+                {"name": "storage.modifier.storage"               , "match": "\\b(thread_local|extern|static|export)\\b"},
+                {"name": "storage.modifier.const.expr"            , "match": "\\bconstexpr\\b"},
+                {"name": "storage.modifier.const.eval"            , "match": "\\bconsteval\\b"},
+                {"name": "storage.modifier.other.virt"            , "match": "\\bvirtual\\b"},
+                {"name": "storage.modifier.other.explicit"        , "match": "\\bexplicit\\b"},
+                {"name": "storage.modifier.other.inline"          , "match": "\\binline\\b"},
+                {"name": "storage.modifier.other.mutable"         , "match": "\\bmutable\\b"},
+                {"name": "storage.modifier.other.alignas"         , "match": "\\balignas\\b"},
+                {"name": "constant.language.bool"                 , "match": "\\b(true|false)\\b"},
+                {"name": "constant.language.this"                 , "match": "\\bthis\\b"},
+                {"name": "constant.language.nullptr"              , "match": "\\bnullptr\\b"}
+            ]
+        },
+        "attribs": {
+            "patterns" : [
+                {"name": "storage.modifier.attrib.noret"          , "match": "\\bnoreturn\\b"},
+                {"name": "storage.modifier.attrib.carries_dep"    , "match": "\\bcarries_dependency\\b"},
+                {"name": "storage.modifier.attrib.depr"           , "match": "\\bdeprecated\\b"},
+                {"name": "storage.modifier.attrib.fall"           , "match": "\\bfallthrough\\b"},
+                {"name": "storage.modifier.attrib.use"            , "match": "\\bnodiscard\\b"},
+                {"name": "storage.modifier.attrib.unused"         , "match": "\\bmaybe_unused\\b"},
+                {"name": "storage.modifier.attrib.expr"           , "match": "\\b(likely|unlikely)\\b"},
+                {"name": "storage.modifier.attrib.no_uniq_addr"   , "match": "\\bno_unique_address\\b"},
+                {"name": "storage.modifier.attrib.contract"       , "match": "\\b(expects|ensures|assert)\\b"}
+
+            ]
+        },
+        "pp_ops": {
+            "patterns" : [
+                {"name": "keyword.operator.word.pp"               , "match": "\\b(defined|__has_include|__has_cpp_attribute)\\b"},
+                {"name": "keyword.operator.symbol.pp.hashhash"    , "match": "##"},
+                {"name": "keyword.operator.symbol.pp.hash"        , "match": "#"}
+            ]
+        },
+        "pp": {
+            "patterns": [
+                {
+                    "name": "meta.pp.line",
+                    "contentName": "meta.pp.content.expr",
+                    "begin": "(#)\\s*(if|elif)\\b",
+                    "end": "\\n",
+                    "beginCaptures":
+                    {
+                        "1": {"name": "keyword.operator.pp.hash"},
+                        "2": {"name": "keyword.other.pp"}
+                    },
+                    "patterns": [{"include": "#generic"}, {"include": "#pp_ops"}, {"include": "#line_cont"}]
+                },
+                {
+                    "name": "meta.pp.line",
+                    "contentName": "meta.pp.content.macro_name",
+                    "begin": "(#)\\s*(ifdef|ifndef|undef)\\b",
+                    "end": "\\n",
+                    "beginCaptures":
+                    {
+                        "1": {"name": "keyword.operator.pp.hash"},
+                        "2": {"name": "keyword.other.pp"}
+                    }
+                },
+                {
+                    "name": "meta.pp.line.pragma",
+                    "contentName": "meta.pp.content.pragma",
+                    "begin": "(#)\\s*(pragma)\\b",
+                    "end": "\\n",
+                    "beginCaptures":
+                    {
+                        "1": {"name": "keyword.operator.pp.hash.pragma"},
+                        "2": {"name": "keyword.other.pp.pragma"}
+                    }
+                },
+                {
+                    "name": "meta.pp.line",
+                    "contentName": "meta.pp.content.expr.define",
+                    "begin": "(#)\\s*(define)(?:\\s*([^(\\s]+)(?:(\\()([^)]*)(\\)))?)?",
+                    "end": "\\n",
+                    "beginCaptures":
+                    {
+                        "1": {"name": "keyword.operator.pp.hash"},
+                        "2": {"name": "keyword.other.pp"},
+                        "3": {"name": "meta.pp.content.macro_name"},
+                        "4": {"name": "keyword.operator.pp.define_paren"},
+                        "5": {"name": "meta.pp.content.define_params"},
+                        "6": {"name": "keyword.operator.pp.define_paren"}
+                    },
+                    "patterns": [{"include": "#generic"}, {"include": "#pp_ops"}]
+                },
+                {
+                    "name": "meta.pp.line",
+                    "contentName": "meta.pp.content",
+                    "begin": "(#)\\s*(include)(?:\\s*(?:(<)([^>]*)(>)|(\")([^)]*)(\")))?",
+                    "end": "\\n",
+                    "beginCaptures":
+                    {
+                        "1": {"name": "keyword.operator.pp.hash"},
+                        "2": {"name": "keyword.other.pp.include"},
+                        "3": {"name": "keyword.operator.pp.include_symbol.system"},
+                        "4": {"name": "meta.pp.content.header.system"},
+                        "5": {"name": "keyword.operator.pp.include_symbol.system"},
+                        "6": {"name": "keyword.operator.pp.include_symbol.user"},
+                        "7": {"name": "meta.pp.content.header.user"},
+                        "8": {"name": "keyword.operator.pp.include_symbol.user"}
+                    },
+                    "patterns": [{"include": "#generic"}]
+                },
+                {
+                    "name": "meta.pp.line",
+                    "contentName": "meta.pp.content",
+                    "begin": "(#)\\s*(?:(else|endif|line|error)\\b)?",
+                    "end": "\\n",
+                    "beginCaptures":
+                    {
+                        "1": {"name": "keyword.operator.pp.hash"},
+                        "2": {"name": "keyword.other.pp"}
+                    },
+                    "patterns": [{"include": "#generic"}]
+                }
+            ]
+        },
+        "comments": {
+            "patterns":[
+                {
+                    "name": "comment.line.documentation",
+                    "begin": "\\/\\/[\\/!]",
+                    "end": "\n",
+                    "patterns": [{"include": "#line_cont"}]
+                },
+                {
+                    "name": "comment.block.documentation",
+                    "begin": "\\/\\*(\\*[^*]|!)",
+                    "end": "\\*\\/"
+                },
+                {
+                    "name": "comment.line",
+                    "begin": "\\/\\/",
+                    "end": "\n",
+                    "patterns": [{"include": "#line_cont"}]
+                },
+                {
+                    "name": "comment.block",
+                    "begin": "\\/\\*",
+                    "end": "\\*\\/"
+                }
+            ]
+        },
 		"strings": {
 			"name": "string.quoted.double.cats-cpp",
 			"begin": "\"",
@@ -26,7 +227,15 @@
 					"match": "\\\\."
 				}
 			]
-		}
+        },
+        "line_cont": {
+            "patterns":[
+                {
+                    "name": "keyword.operator.line_cont",
+                    "match": "\\\\\\n"
+                }
+            ]
+        }
 	},
 	"scopeName": "source.catscpp"
 }

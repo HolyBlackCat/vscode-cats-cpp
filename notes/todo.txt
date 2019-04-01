@@ -1,2 +1,2 @@
-Fake (context) keywords, operators, attributes -> keywords.txt
+Literals (including strings), context-sensitive keywords -> cats-cpp.tmLanguage.json
 Fancy "indentationRules" -> language-configuration.json
