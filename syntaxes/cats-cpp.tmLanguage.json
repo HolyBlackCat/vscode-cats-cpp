@@ -12,15 +12,19 @@
 	"repository": {
 		"generic": {
 			"patterns": [
-                {
-                    "include": "#line_cont"
-                },
-                {
-                    "include": "#comments"
-                },
-                {
-                    "include": "#strings"
-                },
+                {"include": "#line_cont"},
+                {"include": "#comments"},
+
+                {"name": "constant.numeric.real.dec", "match": "(?x)  (?<![A-Za-z0-9_])           [0-9]      (?:'?[0-9]      +)*  ([Ee]) ([+-]?) ([0-9](?:'?[0-9]+)*)  ([A-Za-z_][A-Za-z0-9_]*)?",                                                                                      "captures":{                                                                                                                                             "1":{"name":"constant.numeric.real.dec.exp.letter"}, "2":{"name":"constant.numeric.real.dec.exp.sign"}, "3":{"name":"constant.numeric.real.dec.exp"}, "4":{"name":"constant.suffix.real.dec"}}},
+                {"name": "constant.numeric.real.hex", "match": "(?x)  (?<![A-Za-z0-9_])  (0[Xx])  [0-9A-Fa-f](?:'?[0-9A-Fa-f]+)*  ([Pp]) ([+-]?) ([0-9](?:'?[0-9]+)*)  ([A-Za-z_][A-Za-z0-9_]*)?",                                                                                      "captures":{"1":{"name":"constant.numeric.real.hex.prefix"},                                                                                             "2":{"name":"constant.numeric.real.hex.exp.letter"}, "3":{"name":"constant.numeric.real.hex.exp.sign"}, "4":{"name":"constant.numeric.real.hex.exp"}, "5":{"name":"constant.suffix.real.hex"}}},
+                {"name": "constant.numeric.real.dec", "match": "(?x)  (?<![A-Za-z0-9_])           (?:(?:[0-9]      (?:'?[0-9]      +)*)?(\\.)[0-9]      (?:'?[0-9]      +)*|[0-9]      (?:'?[0-9]      +)*(\\.))  (?:([Ee]) ([+-]?) ([0-9](?:'?[0-9]+)*))?  ([A-Za-z_][A-Za-z0-9_]*)?", "captures":{                                                 "1":{"name":"constant.numeric.real.dec.dot"}, "2":{"name":"constant.numeric.real.dec.dot"}, "3":{"name":"constant.numeric.real.dec.exp.letter"}, "4":{"name":"constant.numeric.real.dec.exp.sign"}, "5":{"name":"constant.numeric.real.dec.exp"}, "6":{"name":"constant.suffix.real.dec"}}},
+                {"name": "constant.numeric.real.hex", "match": "(?x)  (?<![A-Za-z0-9_])  (0[Xx])  (?:(?:[0-9A-Fa-f](?:'?[0-9A-Fa-f]+)*)?(\\.)[0-9A-Fa-f](?:'?[0-9A-Fa-f]+)*|[0-9A-Fa-f](?:'?[0-9A-Fa-f]+)*(\\.))  (?:([Pp]) ([+-]?) ([0-9](?:'?[0-9]+)*))?  ([A-Za-z_][A-Za-z0-9_]*)?", "captures":{"1":{"name":"constant.numeric.real.hex.prefix"}, "2":{"name":"constant.numeric.real.hex.dot"}, "3":{"name":"constant.numeric.real.hex.dot"}, "4":{"name":"constant.numeric.real.hex.exp.letter"}, "5":{"name":"constant.numeric.real.hex.exp.sign"}, "6":{"name":"constant.numeric.real.hex.exp"}, "7":{"name":"constant.suffix.real.hex"}}},
+
+                {"name": "constant.numeric.int.hex",  "match": "(?x)  (?<![A-Za-z0-9_])  (0[Xx])  [0-9A-Fa-f](?:'?[0-9A-Fa-f]+)*  ([A-Za-z_][A-Za-z0-9_]*)?", "captures": {"1":{"name":"constant.numeric.int.hex.prefix"}, "2":{"name":"constant.suffix.int.hex"}}},
+                {"name": "constant.numeric.int.oct",  "match": "(?x)  (?<![A-Za-z0-9_])  (0)      #sic\n     (?:'?[0-7]      +)*  ([A-Za-z_][A-Za-z0-9_]*)?",                      "captures": {"1":{"name":"constant.numeric.int.oct.prefix"}, "2":{"name":"constant.suffix.int.oct"}}},
+                {"name": "constant.numeric.int.dec",  "match": "(?x)  (?<![A-Za-z0-9_])           [1-9]      (?:'?[0-9]      +)*  ([A-Za-z_][A-Za-z0-9_]*)?",                    "captures": {                                                "1":{"name":"constant.suffix.int.dec"}}},
+
+                {"include": "#strings"},
 
                 {
                     "name": "meta.attribute.region",
@@ -83,21 +87,26 @@
                 {"name": "storage.modifier.other.alignas"         , "match": "\\balignas\\b"},
                 {"name": "constant.language.bool"                 , "match": "\\b(true|false)\\b"},
                 {"name": "constant.language.this"                 , "match": "\\bthis\\b"},
-                {"name": "constant.language.nullptr"              , "match": "\\bnullptr\\b"}
+                {"name": "constant.language.nullptr"              , "match": "\\bnullptr\\b"},
+                {"name": "keyword.other.context.override"         , "match": "\\boverride\\b"},
+                {"name": "keyword.other.context.final"            , "match": "\\bfinal\\b"},
+                {"name": "keyword.other.context.module.module"    , "match": "\\bmodule\\b"},
+                {"name": "keyword.other.context.module.import"    , "match": "\\bimport\\b"}
             ]
         },
         "attribs": {
             "patterns" : [
-                {"name": "storage.modifier.attrib.noret"          , "match": "\\bnoreturn\\b"},
-                {"name": "storage.modifier.attrib.carries_dep"    , "match": "\\bcarries_dependency\\b"},
-                {"name": "storage.modifier.attrib.depr"           , "match": "\\bdeprecated\\b"},
-                {"name": "storage.modifier.attrib.fall"           , "match": "\\bfallthrough\\b"},
-                {"name": "storage.modifier.attrib.use"            , "match": "\\bnodiscard\\b"},
-                {"name": "storage.modifier.attrib.unused"         , "match": "\\bmaybe_unused\\b"},
-                {"name": "storage.modifier.attrib.expr"           , "match": "\\b(likely|unlikely)\\b"},
-                {"name": "storage.modifier.attrib.no_uniq_addr"   , "match": "\\bno_unique_address\\b"},
-                {"name": "storage.modifier.attrib.contract"       , "match": "\\b(expects|ensures|assert)\\b"}
-
+                {"name": "storage.modifier.attrib.noret"                , "match": "\\bnoreturn\\b"},
+                {"name": "storage.modifier.attrib.carries_dep"          , "match": "\\bcarries_dependency\\b"},
+                {"name": "storage.modifier.attrib.depr"                 , "match": "\\bdeprecated\\b"},
+                {"name": "storage.modifier.attrib.fall"                 , "match": "\\bfallthrough\\b"},
+                {"name": "storage.modifier.attrib.use"                  , "match": "\\bnodiscard\\b"},
+                {"name": "storage.modifier.attrib.unused"               , "match": "\\bmaybe_unused\\b"},
+                {"name": "storage.modifier.attrib.expr"                 , "match": "\\b(likely|unlikely)\\b"},
+                {"name": "storage.modifier.attrib.no_uniq_addr"         , "match": "\\bno_unique_address\\b"},
+                {"name": "storage.modifier.attrib.contract"             , "match": "\\b(expects|ensures|assert)\\b"},
+                {"name": "storage.modifier.attrib.contract.level.audit" , "match": "\\baudit\\b"},
+                {"name": "storage.modifier.attrib.contract.level.axiom" , "match": "\\baxiom\\b"}
             ]
         },
         "pp_ops": {
@@ -119,7 +128,7 @@
                         "1": {"name": "keyword.operator.pp.hash"},
                         "2": {"name": "keyword.other.pp"}
                     },
-                    "patterns": [{"include": "#generic"}, {"include": "#pp_ops"}, {"include": "#line_cont"}]
+                    "patterns": [{"include": "#generic"}, {"include": "#pp_ops"}]
                 },
                 {
                     "name": "meta.pp.line",
@@ -144,15 +153,15 @@
                     }
                 },
                 {
-                    "name": "meta.pp.line",
+                    "name": "meta.pp.line.define",
                     "contentName": "meta.pp.content.expr.define",
                     "begin": "(#)\\s*(define)(?:\\s*([^(\\s]+)(?:(\\()([^)]*)(\\)))?)?",
                     "end": "\\n",
                     "beginCaptures":
                     {
-                        "1": {"name": "keyword.operator.pp.hash"},
+                        "1": {"name": "keyword.operator.pp.hash.define"},
                         "2": {"name": "keyword.other.pp"},
-                        "3": {"name": "meta.pp.content.macro_name"},
+                        "3": {"name": "meta.pp.content.macro_name.define"},
                         "4": {"name": "keyword.operator.pp.define_paren"},
                         "5": {"name": "meta.pp.content.define_params"},
                         "6": {"name": "keyword.operator.pp.define_paren"}
@@ -160,13 +169,13 @@
                     "patterns": [{"include": "#generic"}, {"include": "#pp_ops"}]
                 },
                 {
-                    "name": "meta.pp.line",
-                    "contentName": "meta.pp.content",
+                    "name": "meta.pp.line.include",
+                    "contentName": "meta.pp.content.include",
                     "begin": "(#)\\s*(include)(?:\\s*(?:(<)([^>]*)(>)|(\")([^)]*)(\")))?",
                     "end": "\\n",
                     "beginCaptures":
                     {
-                        "1": {"name": "keyword.operator.pp.hash"},
+                        "1": {"name": "keyword.operator.pp.hash.include"},
                         "2": {"name": "keyword.other.pp.include"},
                         "3": {"name": "keyword.operator.pp.include_symbol.system"},
                         "4": {"name": "meta.pp.content.header.system"},
@@ -180,12 +189,24 @@
                 {
                     "name": "meta.pp.line",
                     "contentName": "meta.pp.content",
-                    "begin": "(#)\\s*(?:(else|endif|line|error)\\b)?",
+                    "begin": "(#)\\s*(else|endif|line|error)\\b",
                     "end": "\\n",
                     "beginCaptures":
                     {
                         "1": {"name": "keyword.operator.pp.hash"},
                         "2": {"name": "keyword.other.pp"}
+                    },
+                    "patterns": [{"include": "#generic"}]
+                },
+                {
+                    "name": "meta.pp.line.unknown",
+                    "contentName": "meta.pp.content.unknown",
+                    "begin": "(#)\\s*([^\\s]*)",
+                    "end": "\\n",
+                    "beginCaptures":
+                    {
+                        "1": {"name": "keyword.operator.pp.hash.unknown"},
+                        "2": {"name": "keyword.other.pp.unknown"}
                     },
                     "patterns": [{"include": "#generic"}]
                 }
