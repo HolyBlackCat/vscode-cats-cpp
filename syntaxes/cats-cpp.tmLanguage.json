@@ -21,10 +21,21 @@
                 {"name": "constant.numeric.real.hex", "match": "(?x)  (?<![A-Za-z0-9_])  (0[Xx])  (?:(?:[0-9A-Fa-f](?:'?[0-9A-Fa-f]+)*)?(\\.)[0-9A-Fa-f](?:'?[0-9A-Fa-f]+)*|[0-9A-Fa-f](?:'?[0-9A-Fa-f]+)*(\\.))  (?:([Pp]) ([+-]?) ([0-9](?:'?[0-9]+)*))?  ([A-Za-z_][A-Za-z0-9_]*)?", "captures":{"1":{"name":"constant.numeric.real.hex.prefix"}, "2":{"name":"constant.numeric.real.hex.dot"}, "3":{"name":"constant.numeric.real.hex.dot"}, "4":{"name":"constant.numeric.real.hex.exp.letter"}, "5":{"name":"constant.numeric.real.hex.exp.sign"}, "6":{"name":"constant.numeric.real.hex.exp"}, "7":{"name":"constant.suffix.real.hex"}}},
 
                 {"name": "constant.numeric.int.hex",  "match": "(?x)  (?<![A-Za-z0-9_])  (0[Xx])  [0-9A-Fa-f](?:'?[0-9A-Fa-f]+)*  ([A-Za-z_][A-Za-z0-9_]*)?", "captures": {"1":{"name":"constant.numeric.int.hex.prefix"}, "2":{"name":"constant.suffix.int.hex"}}},
-                {"name": "constant.numeric.int.oct",  "match": "(?x)  (?<![A-Za-z0-9_])  (0)      #sic\n     (?:'?[0-7]      +)*  ([A-Za-z_][A-Za-z0-9_]*)?",                      "captures": {"1":{"name":"constant.numeric.int.oct.prefix"}, "2":{"name":"constant.suffix.int.oct"}}},
-                {"name": "constant.numeric.int.dec",  "match": "(?x)  (?<![A-Za-z0-9_])           [1-9]      (?:'?[0-9]      +)*  ([A-Za-z_][A-Za-z0-9_]*)?",                    "captures": {                                                "1":{"name":"constant.suffix.int.dec"}}},
+                {"name": "constant.numeric.int.oct",  "match": "(?x)  (?<![A-Za-z0-9_])  (0)      #sic\n     (?:'?[0-7]      +)*  ([A-Za-z_][A-Za-z0-9_]*)?", "captures": {"1":{"name":"constant.numeric.int.oct.prefix"}, "2":{"name":"constant.suffix.int.oct"}}},
+                {"name": "constant.numeric.int.dec",  "match": "(?x)  (?<![A-Za-z0-9_])           [1-9]      (?:'?[0-9]      +)*  ([A-Za-z_][A-Za-z0-9_]*)?", "captures": {                                                "1":{"name":"constant.suffix.int.dec"}}},
 
-                {"include": "#strings"},
+                {"name": "invalid.illegal.noterminator.string", "begin": "\"", "end": "(?<!\\\\)\\n"},
+                {"name": "invalid.illegal.noterminator.symbol", "begin": "'" , "end": "(?<!\\\\)\\n"},
+                {"name": "constant.character.string",     "begin": "(?x)      (\")", "end": "(?x) (?:(\")|\\n) ([A-Za-z_][A-Za-z0-9_]*)?", "beginCaptures": {                                                     "1":{"name":"constant.character.string.quote"    }}, "endCaptures": {"1":{"name":"constant.character.string.quote"    }}, "patterns": [{"include": "#line_cont"}, {"include": "#escape"}]},
+                {"name": "constant.character.string.l",   "begin": "(?x) ( L) (\")", "end": "(?x) (?:(\")|\\n) ([A-Za-z_][A-Za-z0-9_]*)?", "beginCaptures": {"1":{"name":"constant.character.string.prefix.l"  }, "2":{"name":"constant.character.string.quote.l"  }}, "endCaptures": {"1":{"name":"constant.character.string.quote.l"  }}, "patterns": [{"include": "#line_cont"}, {"include": "#escape"}]},
+                {"name": "constant.character.string.u8",  "begin": "(?x) (u8) (\")", "end": "(?x) (?:(\")|\\n) ([A-Za-z_][A-Za-z0-9_]*)?", "beginCaptures": {"1":{"name":"constant.character.string.prefix.u8" }, "2":{"name":"constant.character.string.quote.u8" }}, "endCaptures": {"1":{"name":"constant.character.string.quote.u8" }}, "patterns": [{"include": "#line_cont"}, {"include": "#escape"}]},
+                {"name": "constant.character.string.u16", "begin": "(?x) ( u) (\")", "end": "(?x) (?:(\")|\\n) ([A-Za-z_][A-Za-z0-9_]*)?", "beginCaptures": {"1":{"name":"constant.character.string.prefix.u16"}, "2":{"name":"constant.character.string.quote.u16"}}, "endCaptures": {"1":{"name":"constant.character.string.quote.u16"}}, "patterns": [{"include": "#line_cont"}, {"include": "#escape"}]},
+                {"name": "constant.character.string.u32", "begin": "(?x) ( U) (\")", "end": "(?x) (?:(\")|\\n) ([A-Za-z_][A-Za-z0-9_]*)?", "beginCaptures": {"1":{"name":"constant.character.string.prefix.u32"}, "2":{"name":"constant.character.string.quote.u32"}}, "endCaptures": {"1":{"name":"constant.character.string.quote.u32"}}, "patterns": [{"include": "#line_cont"}, {"include": "#escape"}]},
+                {"name": "constant.other.symbol"    ,     "begin": "(?x)      ( ')", "end": "(?x) (?:( ')|\\n) ([A-Za-z_][A-Za-z0-9_]*)?", "beginCaptures": {                                                 "1":{"name":"constant.other.symbol.quote"    }}, "endCaptures": {"1":{"name":"constant.other.symbol.quote"    }}, "patterns": [{"include": "#line_cont"}, {"include": "#escape"}]},
+                {"name": "constant.other.symbol.l"  ,     "begin": "(?x) ( L) ( ')", "end": "(?x) (?:( ')|\\n) ([A-Za-z_][A-Za-z0-9_]*)?", "beginCaptures": {"1":{"name":"constant.other.symbol.prefix.l"  }, "2":{"name":"constant.other.symbol.quote.l"  }}, "endCaptures": {"1":{"name":"constant.other.symbol.quote.l"  }}, "patterns": [{"include": "#line_cont"}, {"include": "#escape"}]},
+                {"name": "constant.other.symbol.u8" ,     "begin": "(?x) (u8) ( ')", "end": "(?x) (?:( ')|\\n) ([A-Za-z_][A-Za-z0-9_]*)?", "beginCaptures": {"1":{"name":"constant.other.symbol.prefix.u8" }, "2":{"name":"constant.other.symbol.quote.u8" }}, "endCaptures": {"1":{"name":"constant.other.symbol.quote.u8" }}, "patterns": [{"include": "#line_cont"}, {"include": "#escape"}]},
+                {"name": "constant.other.symbol.u16",     "begin": "(?x) ( u) ( ')", "end": "(?x) (?:( ')|\\n) ([A-Za-z_][A-Za-z0-9_]*)?", "beginCaptures": {"1":{"name":"constant.other.symbol.prefix.u16"}, "2":{"name":"constant.other.symbol.quote.u16"}}, "endCaptures": {"1":{"name":"constant.other.symbol.quote.u16"}}, "patterns": [{"include": "#line_cont"}, {"include": "#escape"}]},
+                {"name": "constant.other.symbol.u32",     "begin": "(?x) ( U) ( ')", "end": "(?x) (?:( ')|\\n) ([A-Za-z_][A-Za-z0-9_]*)?", "beginCaptures": {"1":{"name":"constant.other.symbol.prefix.u32"}, "2":{"name":"constant.other.symbol.quote.u32"}}, "endCaptures": {"1":{"name":"constant.other.symbol.quote.u32"}}, "patterns": [{"include": "#line_cont"}, {"include": "#escape"}]},
 
                 {
                     "name": "meta.attribute.region",
@@ -238,16 +249,18 @@
                 }
             ]
         },
-		"strings": {
-			"name": "string.quoted.double.cats-cpp",
-			"begin": "\"",
-			"end": "\"",
-			"patterns": [
-				{
-					"name": "constant.character.escape.cats-cpp",
-					"match": "\\\\."
-				}
-			]
+        "escape": {
+            "patterns": [
+                {"name": "constant.character.escape",      "match": "\\\\['\"?\\abfnrtv]"},
+                {"name": "constant.character.escape.code", "match": "\\\\0[0-9]{0,2}"},
+                {"name": "invalid.illegal.escape.number",  "match": "\\\\x[A-Fa-f0-9]{3,}"},
+                {"name": "constant.character.escape.code", "match": "\\\\x[A-Fa-f0-9]{1,2}"},
+                {"name": "invalid.illegal.escape.number",  "match": "\\\\u[A-Fa-f0-9]{0,3}"},
+                {"name": "constant.character.escape.code", "match": "\\\\u[A-Fa-f0-9]{4}"},
+                {"name": "invalid.illegal.escape.number",  "match": "\\\\U[A-Fa-f0-9]{0,7}"},
+                {"name": "constant.character.escape.code", "match": "\\\\U[A-Fa-f0-9]{8}"},
+                {"name": "invalid.illegal.escape.symbol",  "match": "\\\\."}
+            ]
         },
         "line_cont": {
             "patterns":[

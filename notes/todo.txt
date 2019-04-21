@@ -1,2 +1,2 @@
-String & char literals, predefined macros -> cats-cpp.tmLanguage.json
+Raw string literals, predefined macros -> cats-cpp.tmLanguage.json
 Fancy "indentationRules" -> language-configuration.json

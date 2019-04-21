@@ -370,3 +370,61 @@ f0x10.10p23foo
 0x10'fF'30.p-40'50'60foo
 0x.10'fF'30p40'50'60foo
 0x10'fF'30.10'fF'30p40'50'60foo
+
+  'fdsa'
+ L'fdsa'
+u8'fdsa'
+ u'fdsa'
+ U'fdsa'
+xx'fdsa'
+
+  "fdsa"
+ L"fdsa"
+u8"fdsa"
+ u"fdsa"
+ U"fdsa"
+xx"fdsa"
+
+  'fd\
+sa'
+ L'fd\
+sa'
+u8'fd\
+sa'
+ u'fd\
+sa'
+ U'fd\
+sa'
+xx'fd\
+sa'
+
+  "fdsa"
+ L"fdsa"
+u8"fdsa"
+ u"fdsa"
+ U"fdsa"
+xx"fdsa"
+
+  "fd\
+sa"
+ L"fd\
+sa"
+u8"fd\
+sa"
+ u"fd\
+sa"
+ U"fd\
+sa"
+xx"fd\
+sa"
+
+'fasdf
+xx
+"fasdf
+xx
+'fasdf\
+xx
+yy
+"fasdf\
+xx
+yy
