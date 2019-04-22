@@ -371,19 +371,29 @@ f0x10.10p23foo
 0x.10'fF'30p40'50'60foo
 0x10'fF'30.10'fF'30p40'50'60foo
 
-  'fdsa'
- L'fdsa'
-u8'fdsa'
- u'fdsa'
- U'fdsa'
-xx'fdsa'
+'123'foo
+"123"foo
 
-  "fdsa"
- L"fdsa"
-u8"fdsa"
- u"fdsa"
- U"fdsa"
-xx"fdsa"
+  'fdsa'_x f
+ L'fdsa'_x f
+u8'fdsa'_x f
+ u'fdsa'_x f
+ U'fdsa'_x f
+xx'fdsa'_x f
+
+  "fdsa"_x f
+ L"fdsa"_x f
+u8"fdsa"_x f
+ u"fdsa"_x f
+ U"fdsa"_x f
+xx"fdsa"_x f
+
+  R"(fdsa)"_x f
+ LR"(fdsa)"_x f
+u8R"(fdsa)"_x f
+ uR"(fdsa)"_x f
+ UR"(fdsa)"_x f
+xxR"(fdsa)"_x f
 
   'fd\
 sa'
@@ -397,13 +407,6 @@ sa'
 sa'
 xx'fd\
 sa'
-
-  "fdsa"
- L"fdsa"
-u8"fdsa"
- u"fdsa"
- U"fdsa"
-xx"fdsa"
 
   "fd\
 sa"
@@ -428,3 +431,24 @@ yy
 "fasdf\
 xx
 yy
+
+R"f(
+    fasdf
+)f"
+xx
+LR"f(
+    fasdf
+)f"
+xx
+u8R"f(
+    fasdf
+)f"
+xx
+uR"f(
+    fasdf
+)f"
+xx
+UR"f(
+    fasdf
+)f"
+xx
