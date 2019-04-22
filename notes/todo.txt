@@ -1,2 +1,2 @@
-Predefined macros, fix PP grammar -> cats-cpp.tmLanguage.json
+Predefined macros -> cats-cpp.tmLanguage.json
 Fancy "indentationRules" -> language-configuration.json
