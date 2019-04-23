@@ -1,8 +1,13 @@
 {
-    "name": "cpp",
+    "name": "cats-cpp",
     "displayName": "Cat's C++",
     "description": "Better highlighting and a custom theme for C++",
     "version": "0.0.1",
+    "publisher": "holyblackcat",
+    "repository": {
+		"type": "git",
+		"url": "https://github.com/HolyBlackCat/vscode-cats-cpp"
+	},
     "engines": {
         "vscode": "^1.32.0"
     },
