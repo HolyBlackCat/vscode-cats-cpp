@@ -32,9 +32,9 @@
                 {"name": "constant.character.string.u8",  "begin": "(?x) \\b (u8) (\")", "end": "(?x) (?:(\")|\\n) ([A-Za-z_][A-Za-z0-9_]*)?", "beginCaptures": {"1":{"name":"constant.character.string.prefix.u8" }, "2":{"name":"constant.character.string.quote.u8" }}, "endCaptures": {"1":{"name":"constant.character.string.quote.u8" }, "2":{"name":"constant.other.suffix.string.u8" }}, "patterns": [{"include": "#escape"}, {"include": "#line_cont"}]},
                 {"name": "constant.character.string.u16", "begin": "(?x) \\b ( u) (\")", "end": "(?x) (?:(\")|\\n) ([A-Za-z_][A-Za-z0-9_]*)?", "beginCaptures": {"1":{"name":"constant.character.string.prefix.u16"}, "2":{"name":"constant.character.string.quote.u16"}}, "endCaptures": {"1":{"name":"constant.character.string.quote.u16"}, "2":{"name":"constant.other.suffix.string.u16"}}, "patterns": [{"include": "#escape"}, {"include": "#line_cont"}]},
                 {"name": "constant.character.string.u32", "begin": "(?x) \\b ( U) (\")", "end": "(?x) (?:(\")|\\n) ([A-Za-z_][A-Za-z0-9_]*)?", "beginCaptures": {"1":{"name":"constant.character.string.prefix.u32"}, "2":{"name":"constant.character.string.quote.u32"}}, "endCaptures": {"1":{"name":"constant.character.string.quote.u32"}, "2":{"name":"constant.other.suffix.string.u32"}}, "patterns": [{"include": "#escape"}, {"include": "#line_cont"}]},
-                {"name": "constant.other.symbol"    ,     "begin": "(?x)          ( ')", "end": "(?x) (?:( ')|\\n) ([A-Za-z_][A-Za-z0-9_]*)?", "beginCaptures": {                                                 "1":{"name":"constant.other.symbol.quote"    }}, "endCaptures": {"1":{"name":"constant.other.symbol.quote"    }, "2":{"name":"constant.other.suffix.symbol"    }}, "patterns": [{"include": "#escape"}, {"include": "#line_cont"}]},
-                {"name": "constant.other.symbol.l"  ,     "begin": "(?x) \\b ( L) ( ')", "end": "(?x) (?:( ')|\\n) ([A-Za-z_][A-Za-z0-9_]*)?", "beginCaptures": {"1":{"name":"constant.other.symbol.prefix.l"  }, "2":{"name":"constant.other.symbol.quote.l"  }}, "endCaptures": {"1":{"name":"constant.other.symbol.quote.l"  }, "2":{"name":"constant.other.suffix.symbol.l"  }}, "patterns": [{"include": "#escape"}, {"include": "#line_cont"}]},
-                {"name": "constant.other.symbol.u8" ,     "begin": "(?x) \\b (u8) ( ')", "end": "(?x) (?:( ')|\\n) ([A-Za-z_][A-Za-z0-9_]*)?", "beginCaptures": {"1":{"name":"constant.other.symbol.prefix.u8" }, "2":{"name":"constant.other.symbol.quote.u8" }}, "endCaptures": {"1":{"name":"constant.other.symbol.quote.u8" }, "2":{"name":"constant.other.suffix.symbol.u8" }}, "patterns": [{"include": "#escape"}, {"include": "#line_cont"}]},
+                {"name": "constant.other.symbol",         "begin": "(?x)          ( ')", "end": "(?x) (?:( ')|\\n) ([A-Za-z_][A-Za-z0-9_]*)?", "beginCaptures": {                                                 "1":{"name":"constant.other.symbol.quote"    }}, "endCaptures": {"1":{"name":"constant.other.symbol.quote"    }, "2":{"name":"constant.other.suffix.symbol"    }}, "patterns": [{"include": "#escape"}, {"include": "#line_cont"}]},
+                {"name": "constant.other.symbol.l",       "begin": "(?x) \\b ( L) ( ')", "end": "(?x) (?:( ')|\\n) ([A-Za-z_][A-Za-z0-9_]*)?", "beginCaptures": {"1":{"name":"constant.other.symbol.prefix.l"  }, "2":{"name":"constant.other.symbol.quote.l"  }}, "endCaptures": {"1":{"name":"constant.other.symbol.quote.l"  }, "2":{"name":"constant.other.suffix.symbol.l"  }}, "patterns": [{"include": "#escape"}, {"include": "#line_cont"}]},
+                {"name": "constant.other.symbol.u8",      "begin": "(?x) \\b (u8) ( ')", "end": "(?x) (?:( ')|\\n) ([A-Za-z_][A-Za-z0-9_]*)?", "beginCaptures": {"1":{"name":"constant.other.symbol.prefix.u8" }, "2":{"name":"constant.other.symbol.quote.u8" }}, "endCaptures": {"1":{"name":"constant.other.symbol.quote.u8" }, "2":{"name":"constant.other.suffix.symbol.u8" }}, "patterns": [{"include": "#escape"}, {"include": "#line_cont"}]},
                 {"name": "constant.other.symbol.u16",     "begin": "(?x) \\b ( u) ( ')", "end": "(?x) (?:( ')|\\n) ([A-Za-z_][A-Za-z0-9_]*)?", "beginCaptures": {"1":{"name":"constant.other.symbol.prefix.u16"}, "2":{"name":"constant.other.symbol.quote.u16"}}, "endCaptures": {"1":{"name":"constant.other.symbol.quote.u16"}, "2":{"name":"constant.other.suffix.symbol.u16"}}, "patterns": [{"include": "#escape"}, {"include": "#line_cont"}]},
                 {"name": "constant.other.symbol.u32",     "begin": "(?x) \\b ( U) ( ')", "end": "(?x) (?:( ')|\\n) ([A-Za-z_][A-Za-z0-9_]*)?", "beginCaptures": {"1":{"name":"constant.other.symbol.prefix.u32"}, "2":{"name":"constant.other.symbol.quote.u32"}}, "endCaptures": {"1":{"name":"constant.other.symbol.quote.u32"}, "2":{"name":"constant.other.suffix.symbol.u32"}}, "patterns": [{"include": "#escape"}, {"include": "#line_cont"}]},
 
@@ -118,7 +118,7 @@
                 {"name": "storage.modifier.attrib.carries_dep"          , "match": "\\bcarries_dependency\\b"},
                 {"name": "storage.modifier.attrib.depr"                 , "match": "\\bdeprecated\\b"},
                 {"name": "storage.modifier.attrib.fall"                 , "match": "\\bfallthrough\\b"},
-                {"name": "storage.modifier.attrib.use"                  , "match": "\\bnodiscard\\b"},
+                {"name": "storage.modifier.attrib.nodiscard"            , "match": "\\bnodiscard\\b"},
                 {"name": "storage.modifier.attrib.unused"               , "match": "\\bmaybe_unused\\b"},
                 {"name": "storage.modifier.attrib.expr"                 , "match": "\\b(likely|unlikely)\\b"},
                 {"name": "storage.modifier.attrib.no_uniq_addr"         , "match": "\\bno_unique_address\\b"},
@@ -127,18 +127,37 @@
                 {"name": "storage.modifier.attrib.contract.level.axiom" , "match": "\\baxiom\\b"}
             ]
         },
-        "pp_ops": {
+        "pp_includes": {
+            "patterns": [
+                {
+                    "name": "constant.character.string.include.system",
+                    "match": "(<)[^>]*(>)",
+                    "captures": {"1":{"name":"constant.character.string.quote.include.system"}, "2":{"name":"constant.character.string.quote.include.system"}}
+                },
+                {
+                    "name": "constant.character.string.include.user",
+                    "match": "(\")[^\"]*(\")",
+                    "captures": {"1":{"name":"constant.character.string.quote.include.user"}, "2":{"name":"constant.character.string.quote.include.user"}}
+                }
+            ]
+        },
+        "in_pp_macro": {
             "patterns" : [
-                {"name": "keyword.operator.word.pp"               , "match": "\\b(defined|__has_include|__has_cpp_attribute)\\b"},
-                {"name": "keyword.operator.symbol.pp.hashhash"    , "match": "##"},
-                {"name": "keyword.operator.symbol.pp.hash"        , "match": "#"}
+                {"name": "keyword.operator.word.pp.in_macro", "match": "\\b(__VA_ARGS__|__VA_OPT__)\\b"},
+                {"name": "keyword.operator.symbol.pp.hashhash", "match": "##"},
+                {"name": "keyword.operator.symbol.pp.hash", "match": "#"}
+            ]
+        },
+        "in_pp_directives": {
+            "patterns" : [
+                {"name": "keyword.operator.word.pp.in_directive", "match": "\\b(defined|__has_include|__has_cpp_attribute)\\b"},
+                {"include": "#pp_includes"}
             ]
         },
         "pp": {
             "patterns": [
                 {
                     "name": "meta.pp.line",
-                    "contentName": "meta.pp.content.expr",
                     "begin": "(#)\\s*(if|elif)\\b",
                     "end": "\\n",
                     "beginCaptures":
@@ -146,63 +165,58 @@
                         "1": {"name": "keyword.operator.pp.hash"},
                         "2": {"name": "keyword.other.pp"}
                     },
-                    "patterns": [{"include": "#generic"}, {"include": "#pp_ops"}]
+                    "patterns": [{"include": "#in_pp_directives"}, {"include": "#generic"}]
                 },
                 {
                     "name": "meta.pp.line",
-                    "contentName": "meta.pp.content.macro_name",
+                    "contentName": "meta.pp.macro_name",
                     "begin": "(#)\\s*(ifdef|ifndef|undef)\\b",
                     "end": "\\n",
                     "beginCaptures":
                     {
                         "1": {"name": "keyword.operator.pp.hash"},
                         "2": {"name": "keyword.other.pp"}
-                    }
+                    },
+                    "patterns": [{"include": "#in_pp_directives"}]
                 },
                 {
                     "name": "meta.pp.line.pragma",
-                    "contentName": "meta.pp.content.pragma",
+                    "contentName": "meta.pp.pragma_expr",
                     "begin": "(#)\\s*(pragma)\\b",
                     "end": "\\n",
                     "beginCaptures":
                     {
                         "1": {"name": "keyword.operator.pp.hash.pragma"},
                         "2": {"name": "keyword.other.pp.pragma"}
-                    }
+                    },
+                    "patterns": [{"include": "#in_pp_directives"}]
                 },
                 {
                     "name": "meta.pp.line.define",
-                    "contentName": "meta.pp.content.expr.define",
                     "begin": "(#)\\s*(define)(?:\\s*([^(\\s]+)(?:(\\()([^)]*)(\\)))?)?",
                     "end": "\\n",
                     "beginCaptures":
                     {
                         "1": {"name": "keyword.operator.pp.hash.define"},
                         "2": {"name": "keyword.other.pp"},
-                        "3": {"name": "meta.pp.content.macro_name.define"},
+                        "3": {"name": "meta.pp.macro_name.define"},
                         "4": {"name": "keyword.operator.pp.define_paren"},
-                        "5": {"name": "meta.pp.content.define_params"},
+                        "5": {"name": "meta.pp.macro_define_params"},
                         "6": {"name": "keyword.operator.pp.define_paren"}
                     },
-                    "patterns": [{"include": "#generic"}, {"include": "#pp_ops"}]
+                    "patterns": [{"include": "#in_pp_macro"}, {"include": "#generic"}]
                 },
                 {
                     "name": "meta.pp.line.include",
                     "contentName": "meta.pp.content.include",
-                    "begin": "(#)\\s*(include)(?:\\s*(?:(<)([^>]*)(>)|(\")([^)]*)(\")))?",
+                    "begin": "(#)\\s*(include)",
                     "end": "\\n",
                     "beginCaptures":
                     {
                         "1": {"name": "keyword.operator.pp.hash.include"},
-                        "2": {"name": "keyword.other.pp.include"},
-                        "3": {"name": "keyword.operator.pp.include_symbol.system"},
-                        "4": {"name": "meta.pp.content.header.system"},
-                        "5": {"name": "keyword.operator.pp.include_symbol.system"},
-                        "6": {"name": "keyword.operator.pp.include_symbol.user"},
-                        "7": {"name": "meta.pp.content.header.user"},
-                        "8": {"name": "keyword.operator.pp.include_symbol.user"}
+                        "2": {"name": "keyword.other.pp.include"}
                     },
-                    "patterns": [{"include": "#generic"}]
+                    "patterns": [{"include": "#pp_includes"}]
                 },
                 {
                     "name": "meta.pp.line",
@@ -213,8 +227,7 @@
                     {
                         "1": {"name": "keyword.operator.pp.hash"},
                         "2": {"name": "keyword.other.pp"}
-                    },
-                    "patterns": [{"include": "#generic"}]
+                    }
                 },
                 {
                     "name": "meta.pp.line.unknown",
@@ -226,7 +239,7 @@
                         "1": {"name": "keyword.operator.pp.hash.unknown"},
                         "2": {"name": "keyword.other.pp.unknown"}
                     },
-                    "patterns": [{"include": "#generic"}]
+                    "patterns": [{"include": "#pp_includes"}, {"include": "#generic"}]
                 }
             ]
         },

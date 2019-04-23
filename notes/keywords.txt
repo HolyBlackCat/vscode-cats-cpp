@@ -264,6 +264,9 @@ keyword.other.pp
         defined
         __has_include
         __has_cpp_attribute
+    .macro_op
+        __VA_ARGS__
+        __VA_OPT__
     .func
         _Pragma
     .const
