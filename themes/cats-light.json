@@ -8,7 +8,7 @@
     },
 	"tokenColors": [
         {
-			"name": "Invalid - Illegal",
+			"name": "Invalid & illegal",
 			"scope": "invalid.illegal",
 			"settings": {
 				"foreground": "#ff3769"
@@ -27,7 +27,7 @@
 			}
 		},
 		{
-			"name": "Comments: Documentation",
+			"name": "Comments: documentation",
 			"scope": [
 				"comment.documentation",
 				"comment.line.documentation",
@@ -103,15 +103,6 @@
 			}
         },
         {
-			"name": "Keyword: throw",
-			"scope": [
-				"keyword.control.oneline.throw"
-			],
-			"settings": {
-				"foreground": "#ff0000"
-			}
-        },
-        {
 			"name": "Keywords: types",
 			"scope": [
 				"storage.type.type"
@@ -168,7 +159,7 @@
 			}
 		},
 		{
-			"name": "Language Constants",
+			"name": "Language constants",
 			"scope": [
 				"constant.language",
 				"support.constant",
@@ -200,17 +191,62 @@
 		},
 		{
 			"name": "Strings",
-			"scope": "string",
+            "scope": [
+                "string",
+                "string.quoted"
+            ],
 			"settings": {
 				"foreground": "#ca0000"
 			}
+        },
+        {
+			"name": "Strings: raw",
+			"scope": "string.quoted.triple",
+			"settings": {
+				"foreground": "#49493c"
+			}
+        },
+        {
+			"name": "Strings: raw (delimiter)",
+			"scope": "string.quoted.triple.delim",
+			"settings": {
+				"foreground": "#d16b17"
+			}
 		},
 		{
-			"name": "Strings: Escape Sequences",
+			"name": "Strings: escape sequences",
 			"scope": "constant.character.escape",
 			"settings": {
 				"foreground": "#520000"
 			}
-		},
+        },
+        {
+			"name": "Qualifiers: scopes",
+			"scope": "meta.qualifier.scope",
+			"settings": {
+				"foreground": "#80521d"
+			}
+        },
+        {
+			"name": "Qualifiers: objects",
+			"scope": "meta.qualifier.object",
+			"settings": {
+				"foreground": "#5c5c5c"
+			}
+        },
+        {
+			"name": "Qualifiers: pointers",
+			"scope": "meta.qualifier.pointer",
+			"settings": {
+				"foreground": "#5c5c5c"
+			}
+        },
+        {
+			"name": "Qualifiers: additional information",
+			"scope": "meta.qualifier.addition",
+			"settings": {
+				"foreground": "#b80156"
+			}
+        }
 	]
 }
