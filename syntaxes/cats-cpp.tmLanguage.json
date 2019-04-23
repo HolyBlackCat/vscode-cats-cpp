@@ -47,17 +47,17 @@
 
                 {
                     "name": "meta.qualifier.scope",
-                    "match": "(::\\s*)?[A-Za-z_][A-Za-z0-9_]*\\s*(::)\\s*(?:(template|typename)\\s*)?(?=[A-Za-z_])",
+                    "match": "(::\\s*)?[A-Za-z_][A-Za-z0-9_]*\\s*(::)\\s*(?:(template|typename)\\s*)?(?=[A-Za-z_~])",
                     "captures": {"1":{"name":"meta.qualifier.scope.op"}, "2":{"name":"meta.qualifier.scope.op"}, "3":{"name":"meta.qualifier.addition"}}
                 },
                 {
                     "name": "meta.qualifier.object",
-                    "match": "(\\.\\s*)?[A-Za-z_][A-Za-z0-9_]*\\s*(\\.)\\s*(?:(template|typename)\\s*)?(?=[A-Za-z_])",
+                    "match": "(\\.\\s*)?[A-Za-z_][A-Za-z0-9_]*\\s*(\\.)\\s*(?:(template|typename)\\s*)?(?=[A-Za-z_~])",
                     "captures": {"1":{"name":"meta.qualifier.object.op"}, "2":{"name":"meta.qualifier.object.op"}, "3":{"name":"meta.qualifier.addition"}}
                 },
                 {
                     "name": "meta.qualifier.pointer",
-                    "match": "(->\\s*)?[A-Za-z_][A-Za-z0-9_]*\\s*(->)\\s*(?:(template|typename)\\s*)?(?=[A-Za-z_])",
+                    "match": "(->\\s*)?[A-Za-z_][A-Za-z0-9_]*\\s*(->)\\s*(?:(template|typename)\\s*)?(?=[A-Za-z_~])",
                     "captures": {"1":{"name":"meta.qualifier.pointer.op"}, "2":{"name":"meta.qualifier.pointer.op"}, "3":{"name":"meta.qualifier.addition"}}
                 },
 
