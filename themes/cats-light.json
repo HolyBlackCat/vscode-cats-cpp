@@ -56,7 +56,7 @@
                 "string.quoted.double.quote.include.system"
             ],
 			"settings": {
-				"foreground": "#b14100"
+				"foreground": "#0d7527"
 			}
 		},
         {
@@ -66,7 +66,7 @@
                 "string.quoted.double.quote.include.user"
             ],
 			"settings": {
-				"foreground": "#b14100"
+				"foreground": "#2a37e6"
 			}
         },
         {
@@ -75,9 +75,37 @@
                 "meta.pp.pragma_value"
             ],
 			"settings": {
-				"foreground": "#813103"
+				"foreground": "#db240c"
 			}
-		},
+        },
+        {
+			"name": "Preprocessor (constants)",
+			"scope": [
+				"constant.language.macro"
+			],
+			"settings": {
+				"foreground": "#8f00c7"
+				// "foreground": "#200dc4"
+			}
+        },
+        {
+			"name": "Preprocessor (macro definition body)",
+			"scope": [
+				"meta.pp.line.define"
+			],
+			"settings": {
+				"foreground": "#472a05"
+			}
+        },
+        {
+			"name": "Preprocessor (macro name)",
+			"scope": [
+				"meta.pp.macro_name"
+			],
+			"settings": {
+				"foreground": "#b14100"
+			}
+        },
 		{
 			"name": "Operators",
 			"scope": "keyword.operator",
@@ -95,6 +123,8 @@
 		{
 			"name": "Keywords",
 			"scope": [
+                "support.type",
+                "storage.type",
 				"keyword",
 				"storage"
 			],
@@ -102,20 +132,18 @@
 				"foreground": "#0050c7"
 			}
         },
-        {
-			"name": "Keywords: types",
-			"scope": [
-				"storage.type.type"
-			],
-			"settings": {
-				"foreground": "#0a8a8f"
-			}
-		},
+        // {
+		// 	"name": "Keywords: types",
+		// 	"scope": [
+		// 		"storage.type.type"
+		// 	],
+		// 	"settings": {
+		// 		"foreground": "#0a8a8f"
+		// 	}
+		// },
 		{
 			"name": "Keywords: storage categories",
 			"scope": [
-                "support.type",
-                "storage.type",
 				"storage.type.category"
 			],
 			"settings": {
@@ -131,15 +159,15 @@
 				"foreground": "#db0054"
 			}
         },
-        {
-			"name": "Keywords: cv-qualifiers",
-			"scope": [
-				"storage.modifier.cv"
-			],
-			"settings": {
-				"foreground": "#0050c7"
-			}
-        },
+        // {
+		// 	"name": "Keywords: cv-qualifiers",
+		// 	"scope": [
+		// 		"storage.modifier.cv"
+		// 	],
+		// 	"settings": {
+		// 		"foreground": "#0050c7"
+		// 	}
+        // },
         {
 			"name": "Attributes",
 			"scope": [
@@ -159,16 +187,17 @@
 			}
 		},
 		{
-			"name": "Language constants",
+			"name": "Constants",
 			"scope": [
 				"constant.language",
 				"support.constant",
 				"variable.language"
 			],
 			"settings": {
-				"foreground": "#200dc4"
+				"foreground": "#0050c7"
+				// "foreground": "#200dc4"
 			}
-		},
+        },
 		{
 			"name": "Numbers",
 			"scope": [
@@ -220,32 +249,33 @@
 				"foreground": "#520000"
 			}
         },
-        {
-			"name": "Qualifiers: scopes",
-			"scope": "meta.qualifier.scope",
-			"settings": {
-				"foreground": "#80521d"
-			}
-        },
-        {
-			"name": "Qualifiers: objects",
-			"scope": "meta.qualifier.object",
-			"settings": {
-				"foreground": "#5c5c5c"
-			}
-        },
-        {
-			"name": "Qualifiers: pointers",
-			"scope": "meta.qualifier.pointer",
-			"settings": {
-				"foreground": "#5c5c5c"
-			}
-        },
+        // {
+		// 	"name": "Qualifiers: scopes",
+		// 	"scope": "meta.qualifier.scope",
+		// 	"settings": {
+		// 		"foreground": "#80521d"
+		// 	}
+        // },
+        // {
+		// 	"name": "Qualifiers: objects",
+		// 	"scope": "meta.qualifier.object",
+		// 	"settings": {
+		// 		"foreground": "#5c5c5c"
+		// 	}
+        // },
+        // {
+		// 	"name": "Qualifiers: pointers",
+		// 	"scope": "meta.qualifier.pointer",
+		// 	"settings": {
+		// 		"foreground": "#5c5c5c"
+		// 	}
+        // },
         {
 			"name": "Qualifiers: additional information",
 			"scope": "meta.qualifier.addition",
 			"settings": {
-				"foreground": "#b80156"
+				"foreground": "#0050c7"
+				// "foreground": "#b80156"
 			}
         }
 	]

@@ -312,6 +312,9 @@ fff
 #error
 #pragma
 
+#inlcude <iostream> // 123
+foo
+
 f123foo
 f0123foo
 f0x123foo

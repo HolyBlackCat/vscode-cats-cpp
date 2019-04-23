@@ -174,7 +174,7 @@
         },
         "in_pp_macro": {
             "patterns" : [
-                {"name": "keyword.operator.word.pp.in_macro.catscpp", "match": "\\b(__VA_ARGS__|__VA_OPT__)\\b"},
+                {"name": "constant.language.macro.in_macro_def.catscpp", "match": "\\b(__VA_ARGS__|__VA_OPT__)\\b"},
                 {"name": "keyword.operator.symbol.pp.hashhash.catscpp", "match": "##"},
                 {"name": "keyword.operator.symbol.pp.hash.catscpp", "match": "#"}
             ]
@@ -279,7 +279,7 @@
                 {
                     "name": "comment.line.documentation.catscpp",
                     "begin": "\\/\\/[\\/!]",
-                    "end": "\n",
+                    "end": "$",
                     "patterns": [{"include": "#line_cont"}]
                 },
                 {
@@ -290,7 +290,7 @@
                 {
                     "name": "comment.line.catscpp",
                     "begin": "\\/\\/",
-                    "end": "\n",
+                    "end": "$",
                     "patterns": [{"include": "#line_cont"}]
                 },
                 {
