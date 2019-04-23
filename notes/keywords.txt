@@ -285,7 +285,7 @@ keyword.other.pp
             __STDC_MB_MIGHT_NEQ_WC__
             __STDCPP_STRICT_POINTER_SAFETY__
             __STDCPP_THREADS__
-            __cpp_[A-Za-z0-9_]*
+            __cpp_[A-Za-z0-9_]* (__cpp_whatever)
 
 //fff \
 fff
@@ -293,7 +293,7 @@ fff
 // fff
 fff
 
-#if       1 == 1##2
+#if       1 == 1##2 __has_include
 #elif     1 == 1##2
 #else
 #endif

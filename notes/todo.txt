@@ -1,2 +1,2 @@
-Predefined macros -> cats-cpp.tmLanguage.json
+Language suffix -> cats-cpp.tmLanguage.json
 Fancy "indentationRules" -> language-configuration.json
