@@ -3,51 +3,93 @@
 	"name": "Cat's Light",
 	"type": "light",
 	"colors": {
-		"editor.background": "#f5f5f5",
-		"editor.foreground": "#333333"
-	},
+		"editor.background": "#ffffff",
+        "editor.foreground": "#000000",
+    },
 	"tokenColors": [
-		{
-			"name": "Comments",
-			"scope": [
-				"comment",
-				"punctuation.definition.comment"
-			],
+        {
+			"name": "Invalid - Illegal",
+			"scope": "invalid.illegal",
 			"settings": {
-				"fontStyle": "italic",
-				"foreground": "#AAAAAA"
+				"foreground": "#ff3769"
 			}
 		},
 		{
-			"name": "Comments: Preprocessor",
-			"scope": "comment.block.preprocessor",
+			"name": "Comments",
+			"scope": [
+                "comment",
+                "comment.block",
+                "punctuation.definition.comment"
+            ],
 			"settings": {
 				"fontStyle": "",
-				"foreground": "#AAAAAA"
+				"foreground": "#929292"
 			}
 		},
 		{
 			"name": "Comments: Documentation",
 			"scope": [
 				"comment.documentation",
+				"comment.line.documentation",
 				"comment.block.documentation"
 			],
 			"settings": {
-				"foreground": "#448C27"
+				"foreground": "#be856e"
+			}
+        },
+        {
+			"name": "Preprocessor",
+            "scope": [
+                "meta.pp",
+                "keyword.operator.pp",
+                "keyword.other.pp",
+                "comment.block.preprocessor"
+            ],
+			"settings": {
+				"foreground": "#dd7b0a"
+			}
+        },
+        {
+			"name": "Preprocessor (system header)",
+            "scope": [
+                "string.quoted.double.include.system",
+                "string.quoted.double.quote.include.system"
+            ],
+			"settings": {
+				"foreground": "#b14100"
 			}
 		},
-		{
-			"name": "Invalid - Illegal",
-			"scope": "invalid.illegal",
+        {
+			"name": "Preprocessor (user header)",
+            "scope": [
+                "string.quoted.double.include.user",
+                "string.quoted.double.quote.include.user"
+            ],
 			"settings": {
-				"foreground": "#660000"
+				"foreground": "#b14100"
+			}
+        },
+        {
+			"name": "Preprocessor (pragma)",
+            "scope": [
+                "meta.pp.pragma_value"
+            ],
+			"settings": {
+				"foreground": "#813103"
 			}
 		},
 		{
 			"name": "Operators",
 			"scope": "keyword.operator",
 			"settings": {
-				"foreground": "#777777"
+				"foreground": "#000000"
+			}
+        },
+        {
+			"name": "Operators (words)",
+			"scope": "keyword.operator.word",
+			"settings": {
+				"foreground": "#ff00c8"
 			}
 		},
 		{
@@ -57,17 +99,72 @@
 				"storage"
 			],
 			"settings": {
-				"foreground": "#4B83CD"
+				"foreground": "#0050c7"
+			}
+        },
+        {
+			"name": "Keyword: throw",
+			"scope": [
+				"keyword.control.oneline.throw"
+			],
+			"settings": {
+				"foreground": "#ff0000"
+			}
+        },
+        {
+			"name": "Keywords: types",
+			"scope": [
+				"storage.type.type"
+			],
+			"settings": {
+				"foreground": "#0a8a8f"
 			}
 		},
 		{
-			"name": "Types",
+			"name": "Keywords: storage categories",
 			"scope": [
-				"storage.type",
-				"support.type"
+                "support.type",
+                "storage.type",
+				"storage.type.category"
 			],
 			"settings": {
-				"foreground": "#7A3E9D"
+				"foreground": "#97281c"
+			}
+        },
+        {
+			"name": "Keywords: context-sensitive",
+			"scope": [
+				"keyword.other.context"
+			],
+			"settings": {
+				"foreground": "#f000a0"
+			}
+        },
+        {
+			"name": "Keywords: cv-qualifiers",
+			"scope": [
+				"storage.modifier.cv"
+			],
+			"settings": {
+				"foreground": "#db0054"
+			}
+        },
+        {
+			"name": "Attributes",
+			"scope": [
+				"meta.attribute.region"
+			],
+			"settings": {
+				"foreground": "#496801"
+			}
+		},
+        {
+			"name": "Attributes (names)",
+			"scope": [
+				"storage.modifier.attrib"
+			],
+			"settings": {
+				"foreground": "#76a800"
 			}
 		},
 		{
@@ -78,126 +175,42 @@
 				"variable.language"
 			],
 			"settings": {
-				"foreground": "#AB6526"
+				"foreground": "#200dc4"
 			}
 		},
 		{
-			"name": "Variables",
-			"scope": [
-				"variable",
-				"support.variable"
-			],
-			"settings": {
-				"foreground": "#7A3E9D"
-			}
-		},
-		{
-			"name": "Functions",
-			"scope": [
-				"entity.name.function",
-				"support.function"
-			],
-			"settings": {
-				"fontStyle": "bold",
-				"foreground": "#AA3731"
-			}
-		},
-		{
-			"name": "Classes",
-			"scope": [
-				"entity.name.type",
-				"entity.other.inherited-class",
-				"support.class"
-			],
-			"settings": {
-				"fontStyle": "bold",
-				"foreground": "#7A3E9D"
-			}
-		},
-		{
-			"name": "Exceptions",
-			"scope": "entity.name.exception",
-			"settings": {
-				"foreground": "#660000"
-			}
-		},
-		{
-			"name": "Sections",
-			"scope": "entity.name.section",
-			"settings": {
-				"fontStyle": "bold"
-			}
-		},
-		{
-			"name": "Numbers, Characters",
+			"name": "Numbers",
 			"scope": [
 				"constant.numeric",
 				"constant.character",
 				"constant"
 			],
 			"settings": {
-				"foreground": "#AB6526"
+				"foreground": "#058516"
+			}
+        },
+        {
+			"name": "Characters",
+			"scope": [
+				"constant.character",
+			],
+			"settings": {
+				"foreground": "#ee4816"
 			}
 		},
 		{
 			"name": "Strings",
 			"scope": "string",
 			"settings": {
-				"foreground": "#448C27"
+				"foreground": "#ca0000"
 			}
 		},
 		{
 			"name": "Strings: Escape Sequences",
 			"scope": "constant.character.escape",
 			"settings": {
-				"foreground": "#777777"
+				"foreground": "#520000"
 			}
 		},
-		{
-			"name": "Strings: Regular Expressions",
-			"scope": "string.regexp",
-			"settings": {
-				"foreground": "#4B83CD"
-			}
-		},
-		{
-			"name": "Strings: Symbols",
-			"scope": "constant.other.symbol",
-			"settings": {
-				"foreground": "#AB6526"
-			}
-		},
-		{
-			"name": "Punctuation",
-			"scope": "punctuation",
-			"settings": {
-				"foreground": "#777777"
-			}
-		},
-		{
-			"name": "Extra: Diff Range",
-			"scope": [
-				"meta.diff.range",
-				"meta.diff.index",
-				"meta.separator"
-			],
-			"settings": {
-				"foreground": "#434343"
-			}
-		},
-		{
-			"name": "Extra: Diff From",
-			"scope": "meta.diff.header.from-file",
-			"settings": {
-				"foreground": "#434343"
-			}
-		},
-		{
-			"name": "Extra: Diff To",
-			"scope": "meta.diff.header.to-file",
-			"settings": {
-				"foreground": "#434343"
-			}
-		}
 	]
 }

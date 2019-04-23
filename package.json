@@ -12,7 +12,7 @@
     "contributes": {
         "languages": [{
             "id": "cats-cpp",
-            "aliases": ["C++!", "cats-cpp"],
+            "aliases": ["C++'", "cats-cpp"],
             "extensions": [".cpp"],
             "configuration": "./language-configuration.json"
         }],
