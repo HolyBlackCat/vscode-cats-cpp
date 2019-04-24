@@ -208,7 +208,7 @@
                         "1": {"name": "keyword.operator.pp.hash.catscpp"},
                         "2": {"name": "keyword.other.pp.catscpp"}
                     },
-                    "patterns": [{"include": "#in_pp_directives"}, {"include": "#pp_predefined"}]
+                    "patterns": [{"include": "#in_pp_directives"}, {"include": "#line_cont"}, {"include": "#comments"}, {"include": "#pp_predefined"}]
                 },
                 {
                     "name": "meta.pp.line.pragma.catscpp",
@@ -220,7 +220,7 @@
                         "1": {"name": "keyword.operator.pp.hash.pragma.catscpp"},
                         "2": {"name": "keyword.other.pp.pragma.catscpp"}
                     },
-                    "patterns": [{"include": "#in_pp_directives"}]
+                    "patterns": [{"include": "#in_pp_directives"}, {"include": "#line_cont"}, {"include": "#comments"}, {"include": "#pp_predefined"}]
                 },
                 {
                     "name": "meta.pp.line.define.catscpp",
@@ -246,7 +246,7 @@
                         "1": {"name": "keyword.operator.pp.hash.include.catscpp"},
                         "2": {"name": "keyword.other.pp.include.catscpp"}
                     },
-                    "patterns": [{"include": "#pp_includes"}]
+                    "patterns": [{"include": "#pp_includes"}, {"include": "#line_cont"}, {"include": "#comments"}, {"include": "#pp_predefined"}]
                 },
                 {
                     "name": "meta.pp.line.catscpp",
