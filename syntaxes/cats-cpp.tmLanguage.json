@@ -239,7 +239,6 @@
                 },
                 {
                     "name": "meta.pp.line.include.catscpp",
-                    "contentName": "meta.pp.content.include.catscpp",
                     "begin": "(#)\\s*(include)",
                     "end": "\\n",
                     "beginCaptures":
@@ -251,7 +250,6 @@
                 },
                 {
                     "name": "meta.pp.line.catscpp",
-                    "contentName": "meta.pp.content.catscpp",
                     "begin": "(#)\\s*(else|endif|line|error)\\b",
                     "end": "\\n",
                     "beginCaptures":
@@ -262,7 +260,6 @@
                 },
                 {
                     "name": "meta.pp.line.unknown.catscpp",
-                    "contentName": "meta.pp.content.unknown.catscpp",
                     "begin": "(#)\\s*([^\\s]*)",
                     "end": "\\n",
                     "beginCaptures":
@@ -302,7 +299,7 @@
         },
         "escape": {
             "patterns": [
-                {"name": "constant.character.escape.catscpp",      "match": "\\\\['\"?\\abfnrtv]"},
+                {"name": "constant.character.escape.catscpp",      "match": "\\\\['\"?\\\\abfnrtv]"},
                 {"name": "constant.character.escape.code.catscpp", "match": "\\\\0[0-9]{0,2}"},
                 {"name": "invalid.illegal.escape.number.catscpp",  "match": "\\\\x[A-Fa-f0-9]{3,}"},
                 {"name": "constant.character.escape.code.catscpp", "match": "\\\\x[A-Fa-f0-9]{1,2}"},

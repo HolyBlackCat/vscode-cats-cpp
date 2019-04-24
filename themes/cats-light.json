@@ -15,7 +15,7 @@
 		"list.hoverBackground": "#E8E8E8",
 		"input.placeholderForeground": "#767676",
 		"settings.textInputBorder": "#CECECE",
-		"settings.numberInputBorder": "#CECECE"
+        "settings.numberInputBorder": "#CECECE"
     },
 	"tokenColors": [
         {
@@ -24,7 +24,7 @@
 			"settings": {
 				"foreground": "#ff3769"
 			}
-		},
+        },
 		{
 			"name": "Comments",
 			"scope": [
@@ -34,7 +34,7 @@
             ],
 			"settings": {
 				"fontStyle": "",
-				"foreground": "#929292"
+				"foreground": "#419741"
 			}
 		},
 		{
@@ -45,7 +45,7 @@
 				"comment.block.documentation"
 			],
 			"settings": {
-				"foreground": "#be856e"
+				"foreground": "#d84e87"
 			}
         },
         {
@@ -57,7 +57,7 @@
                 "comment.block.preprocessor"
             ],
 			"settings": {
-				"foreground": "#dd7b0a"
+				"foreground": "#df217a"
 			}
         },
         {
@@ -67,7 +67,7 @@
                 "string.quoted.double.quote.include.system"
             ],
 			"settings": {
-				"foreground": "#0d7527"
+				"foreground": "#4403be"
 			}
 		},
         {
@@ -77,7 +77,7 @@
                 "string.quoted.double.quote.include.user"
             ],
 			"settings": {
-				"foreground": "#2a37e6"
+				"foreground": "#276d0b"
 			}
         },
         {
@@ -86,7 +86,7 @@
                 "meta.pp.pragma_value"
             ],
 			"settings": {
-				"foreground": "#db240c"
+				"foreground": "#bd00b3"
 			}
         },
         {
@@ -100,12 +100,12 @@
 			}
         },
         {
-			"name": "Preprocessor (macro definition body)",
+			"name": "Preprocessor (directive body)",
 			"scope": [
-				"meta.pp.line.define"
+				"meta.pp.line"
 			],
 			"settings": {
-				"foreground": "#472a05"
+				"foreground": "#000000"
 			}
         },
         {
@@ -114,7 +114,7 @@
 				"meta.pp.macro_name"
 			],
 			"settings": {
-				"foreground": "#b14100"
+				"foreground": "#8f0043"
 			}
         },
 		{
@@ -226,7 +226,7 @@
 				"constant.character",
 			],
 			"settings": {
-				"foreground": "#ee4816"
+				"foreground": "#008f99"
 			}
 		},
 		{
@@ -236,7 +236,7 @@
                 "string.quoted"
             ],
 			"settings": {
-				"foreground": "#c51f1f"
+				"foreground": "#c41f1f"
 			}
         },
         {
@@ -257,9 +257,16 @@
 			"name": "Strings: escape sequences",
 			"scope": "constant.character.escape",
 			"settings": {
-				"foreground": "#520000"
+				"foreground": "#002981"
 			}
         },
+        {
+			"name": "Invalid & illegal (escape sequences)",
+			"scope": "invalid.illegal.escape",
+			"settings": {
+				"foreground": "#ff00ff"
+			}
+		},
         // {
 		// 	"name": "Qualifiers: scopes",
 		// 	"scope": "meta.qualifier.scope",
