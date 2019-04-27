@@ -260,7 +260,7 @@
                 },
                 {
                     "name": "meta.pp.line.unknown.catscpp",
-                    "begin": "(#)\\s*([^\\s]*)",
+                    "begin": "(#)[\\s-[\\n]]*([^\\s\\n]*)",
                     "end": "\\n",
                     "beginCaptures":
                     {

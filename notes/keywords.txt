@@ -312,8 +312,9 @@ fff
 #error
 #pragma
 
-#inlcude <iostream> // 123
-foo
+#include <iostream> // 123
+#include "iostream" // 123
+#invalid foo // 123
 
 f123foo
 f0123foo
