@@ -281,7 +281,7 @@
                 },
                 {
                     "name": "comment.block.documentation.catscpp",
-                    "begin": "\\/\\*(\\*[^*]|!)",
+                    "begin": "\\/\\*(?:\\*[^*\\/]|!)",
                     "end": "\\*\\/"
                 },
                 {
