@@ -312,6 +312,8 @@ fff
 #error
 #pragma
 
+#pragma once
+
 #include <iostream> // 123
 #include "iostream" // 123
 #invalid foo // 123

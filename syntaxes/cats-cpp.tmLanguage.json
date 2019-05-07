@@ -256,11 +256,12 @@
                     {
                         "1": {"name": "keyword.operator.pp.hash.catscpp"},
                         "2": {"name": "keyword.other.pp.catscpp"}
-                    }
+                    },
+                    "patterns": [{"include": "#comments"}]
                 },
                 {
                     "name": "meta.pp.line.unknown.catscpp",
-                    "begin": "(#)[\\s-[\\n]]*([^\\s\\n]*)",
+                    "begin": "(#)(?:\\s*([^\\s]*))?",
                     "end": "\\n",
                     "beginCaptures":
                     {

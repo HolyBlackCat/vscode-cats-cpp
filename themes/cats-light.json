@@ -86,7 +86,7 @@
                 "meta.pp.pragma_value"
             ],
 			"settings": {
-				"foreground": "#bd00b3"
+				"foreground": "#0062bd"
 			}
         },
         {
@@ -120,10 +120,11 @@
         {
 			"name": "Preprocessor (unknown directive)",
             "scope": [
-                "keyword.other.pp.unknown"
+                "keyword.other.pp.unknown",
+                "keyword.operator.pp.hash.unknown"
             ],
 			"settings": {
-				"foreground": "#0064c2"
+				"foreground": "#9e24ce"
 			}
         },
 		{
