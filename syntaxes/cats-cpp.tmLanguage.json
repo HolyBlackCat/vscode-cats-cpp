@@ -261,7 +261,7 @@
                 },
                 {
                     "name": "meta.pp.line.unknown.catscpp",
-                    "begin": "(#)(?:\\s*([^\\s]*))?",
+                    "begin": "(#)(?:\\s*([^\\s]+))?",
                     "end": "\\n",
                     "beginCaptures":
                     {
