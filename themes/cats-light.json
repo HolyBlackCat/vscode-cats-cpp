@@ -285,27 +285,6 @@
 				"foreground": "#0056a7"
 			}
         },
-        // {
-		// 	"name": "Qualifiers: scopes",
-		// 	"scope": "meta.qualifier.scope",
-		// 	"settings": {
-		// 		"foreground": "#80521d"
-		// 	}
-        // },
-        // {
-		// 	"name": "Qualifiers: objects",
-		// 	"scope": "meta.qualifier.object",
-		// 	"settings": {
-		// 		"foreground": "#5c5c5c"
-		// 	}
-        // },
-        // {
-		// 	"name": "Qualifiers: pointers",
-		// 	"scope": "meta.qualifier.pointer",
-		// 	"settings": {
-		// 		"foreground": "#5c5c5c"
-		// 	}
-        // },
         {
 			"name": "Qualifiers: additional information",
 			"scope": "meta.qualifier.addition",
