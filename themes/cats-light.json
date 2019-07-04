@@ -18,8 +18,10 @@
         "settings.numberInputBorder": "#cecece",
         "editorError.foreground": "#ff0000",
         "editorOverviewRuler.errorForeground": "#ff0000bf",
-        "editorWarning.foreground": "#3298d3",
-        "editorOverviewRuler.warningForeground": "#3298d3bf",
+        "editorWarning.foreground": "#3131ff",
+        "editorOverviewRuler.warningForeground": "#3131ffbf",
+        "editorInfo.foreground": "#3298d3",
+        "editorOverviewRuler.infoForeground": "#3298d3bf",
         "editorOverviewRuler.findMatchForeground": "#ffaa00bf"
     },
 	"tokenColors": [
