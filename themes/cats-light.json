@@ -22,7 +22,9 @@
         "editorOverviewRuler.warningForeground": "#3131ffbf",
         "editorInfo.foreground": "#3298d3",
         "editorOverviewRuler.infoForeground": "#3298d3bf",
-        "editorOverviewRuler.findMatchForeground": "#ffaa00bf"
+        "editorOverviewRuler.findMatchForeground": "#ffaa00bf",
+        "inputOption.activeBorder": "#99CAEB",
+        "inputOption.activeBackground": "#ceeafd"
     },
 	"tokenColors": [
         {
