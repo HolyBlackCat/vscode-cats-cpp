@@ -104,7 +104,8 @@
 				"constant.language.macro"
 			],
 			"settings": {
-				"foreground": "#8f00c7"
+				"foreground": "#a55d00"
+				// "foreground": "#8f00c7"
 				// "foreground": "#200dc4"
 			}
         },
@@ -162,16 +163,7 @@
 				"foreground": "#0050c7"
 			}
         },
-        // {
-		// 	"name": "Keywords: types",
-		// 	"scope": [
-		// 		"storage.type.type"
-		// 	],
-		// 	"settings": {
-		// 		"foreground": "#0a8a8f"
-		// 	}
-		// },
-		{
+        {
 			"name": "Keywords: storage categories",
 			"scope": [
 				"storage.type.category"
@@ -189,6 +181,15 @@
 				"foreground": "#db0054"
 			}
         },
+        // {
+		// 	"name": "Keywords: types",
+		// 	"scope": [
+		// 		"storage.type.type"
+		// 	],
+		// 	"settings": {
+		// 		"foreground": "#0a8a8f"
+		// 	}
+		// },
         // {
 		// 	"name": "Keywords: cv-qualifiers",
 		// 	"scope": [
@@ -221,10 +222,10 @@
 			"scope": [
 				"constant.language",
 				"support.constant",
-				"variable.language"
+                "variable.language"
 			],
 			"settings": {
-				"foreground": "#0050c7"
+                "foreground": "#0e7265"
 			}
         },
 		{
@@ -238,6 +239,21 @@
 				"foreground": "#058516"
 			}
         },
+        // {
+		// 	"name": "Numbers (alt)",
+		// 	"scope": [
+        //         "constant.numeric.real.dec.exp",
+        //         "constant.numeric.real.hex.exp",
+		// 		"constant.numeric.real.dec.prefix",
+        //         "constant.numeric.real.hex.prefix",
+        //         "constant.numeric.int.hex.prefix",
+        //         "constant.numeric.int.oct.prefix",
+        //         "constant.numeric.int.bin.prefix"
+		// 	],
+		// 	"settings": {
+		// 		"foreground": "#04410c"
+		// 	}
+        // },
         {
 			"name": "Characters",
 			"scope": [
@@ -294,12 +310,5 @@
 				"foreground": "#0056a7"
 			}
         },
-        {
-			"name": "Qualifiers: additional information",
-			"scope": "meta.qualifier.addition",
-			"settings": {
-				"foreground": "#0050c7"
-			}
-        }
 	]
 }

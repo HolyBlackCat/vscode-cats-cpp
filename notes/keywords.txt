@@ -206,10 +206,6 @@ keyword.other
         override
     .final
         final
-    .audit
-        audit
-    .axiom
-        axiom
     .import
         import
     .module
@@ -236,12 +232,6 @@ storage.modifier
             unlikely
         .no_uniq_addr
             no_unique_address
-        .contract
-            expects
-            ensures
-            assert
-audit
-axiom
 ]]
 
 ------------- Preprocessor -------------
