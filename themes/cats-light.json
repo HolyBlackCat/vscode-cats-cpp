@@ -18,8 +18,8 @@
         "settings.numberInputBorder": "#cecece",
         "editorError.foreground": "#ff0000",
         "editorOverviewRuler.errorForeground": "#ff0000bf",
-        "editorWarning.foreground": "#3131ff",
-        "editorOverviewRuler.warningForeground": "#3131ffbf",
+        "editorWarning.foreground": "#ec00ec",
+        "editorOverviewRuler.warningForeground": "#ec00ecbf",
         "editorInfo.foreground": "#3298d3",
         "editorOverviewRuler.infoForeground": "#3298d3bf",
         "editorOverviewRuler.findMatchForeground": "#ffaa00bf",
@@ -225,7 +225,7 @@
                 "variable.language"
 			],
 			"settings": {
-                "foreground": "#0e7265"
+                "foreground": "#b40797"
 			}
         },
 		{
@@ -277,7 +277,7 @@
 			"name": "Strings: raw",
 			"scope": "string.quoted.triple",
 			"settings": {
-				"foreground": "#49493c"
+				"foreground": "#464646"
 			}
         },
         {
@@ -307,7 +307,7 @@
 				"constant.other.suffix"
 			],
 			"settings": {
-				"foreground": "#0056a7"
+				"foreground": "#0a8488"
 			}
         },
 	]
