@@ -22,8 +22,8 @@
 
                 {"name": "constant.numeric.int.hex.catscpp",  "match": "(?x)  (?<![A-Za-z0-9_])  (0[Xx])  [0-9A-Fa-f]   +(?:'[0-9A-Fa-f]+)*  ([A-Za-z_][A-Za-z0-9_]*)?", "captures": {"1":{"name":"constant.numeric.int.hex.prefix.catscpp"}, "2":{"name":"constant.other.suffix.int.hex.catscpp"}}},
                 {"name": "constant.numeric.int.bin.catscpp",  "match": "(?x)  (?<![A-Za-z0-9_])  (0[Bb])  [01]          +(?:'[01]       +)*  ([A-Za-z_][A-Za-z0-9_]*)?", "captures": {"1":{"name":"constant.numeric.int.bin.prefix.catscpp"}, "2":{"name":"constant.other.suffix.int.bin.catscpp"}}},
-                {"name": "constant.numeric.int.oct.catscpp",  "match": "(?x)  (?<![A-Za-z0-9_])  (0)      [0-7] #sic>\n *(?:'[0-7]      +)*  ([A-Za-z_][A-Za-z0-9_]*)?", "captures": {"1":{"name":"constant.numeric.int.oct.prefix.catscpp"}, "2":{"name":"constant.other.suffix.int.oct.catscpp"}}},
-                {"name": "constant.numeric.int.dec.catscpp",  "match": "(?x)  (?<![A-Za-z0-9_])  [1-9]    [0-9] #sic<\n +(?:'[0-9]      +)*  ([A-Za-z_][A-Za-z0-9_]*)?", "captures": {                                                        "1":{"name":"constant.other.suffix.int.dec.catscpp"}}},
+                {"name": "constant.numeric.int.oct.catscpp",  "match": "(?x)  (?<![A-Za-z0-9_])  (0)      [0-7]  #sic\n *(?:'[0-7]      +)*  ([A-Za-z_][A-Za-z0-9_]*)?", "captures": {"1":{"name":"constant.numeric.int.oct.prefix.catscpp"}, "2":{"name":"constant.other.suffix.int.oct.catscpp"}}},
+                {"name": "constant.numeric.int.dec.catscpp",  "match": "(?x)  (?<![A-Za-z0-9_])  [1-9]    [0-9]  #sic\n *(?:'[0-9]      +)*  ([A-Za-z_][A-Za-z0-9_]*)?", "captures": {                                                        "1":{"name":"constant.other.suffix.int.dec.catscpp"}}},
 
                 {"name": "invalid.illegal.constant.string.catscpp", "match": "\"(?:[^\"]*[^\\\\\"])?\\n"},
                 {"name": "invalid.illegal.constant.symbol.catscpp", "match": "'(?:[^']*[^\\\\'])?\\n"},
