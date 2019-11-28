@@ -27,11 +27,15 @@ A VSCode extension providing a custom C++ grammar, and a light color theme tailo
 
 **Installation:**
 
+Download the `.vsix` file. Then do <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> ▶ `Extensions: Install from VSIX...`.
+
+
+
 The custom grammar automatically overrides the default C++ grammar. The langauge name is changed to `C++'` to indicate that.
 
 The color theme has to be enabled manually:
 
-<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> ▶ Preferences: Color Theme ▶ Cat's Light.
+<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> ▶ `Preferences: Color Theme` ▶ `Cat's Light`.
 
 **Known issues:**
 
