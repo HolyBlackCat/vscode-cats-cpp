@@ -282,7 +282,7 @@
         "escape": {
             "patterns": [
                 {"name": "constant.character.escape.catscpp",      "match": "\\\\['\"?\\\\abfnrtv]"},
-                {"name": "constant.character.escape.code.catscpp", "match": "\\\\0[0-9]{0,2}"},
+                {"name": "constant.character.escape.code.catscpp", "match": "\\\\[0-7]{1,3}"},
                 {"name": "invalid.illegal.escape.number.catscpp",  "match": "\\\\x[A-Fa-f0-9]{3,}"},
                 {"name": "constant.character.escape.code.catscpp", "match": "\\\\x[A-Fa-f0-9]{1,2}"},
                 {"name": "invalid.illegal.escape.number.catscpp",  "match": "\\\\u[A-Fa-f0-9]{0,3}"},
