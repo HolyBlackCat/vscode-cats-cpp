@@ -32,3 +32,9 @@ The custom grammar automatically overrides the default C++ grammar. The langauge
 The color theme has to be enabled manually:
 
 <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> ▶ Preferences: Color Theme ▶ Cat's Light.
+
+**Known issues:**
+
+* The grammar doesn't work well with other themes.
+
+* The theme fails to highlight some minor elements in some other languages/grammars.
