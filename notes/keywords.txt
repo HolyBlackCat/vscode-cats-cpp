@@ -178,6 +178,8 @@ storage
                 constexpr
             .eval
                 consteval
+            .init
+                constinit
         .other
 			.virt
 				virtual

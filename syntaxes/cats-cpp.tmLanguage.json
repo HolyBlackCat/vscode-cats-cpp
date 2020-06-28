@@ -101,6 +101,7 @@
                 {"name": "storage.modifier.storage.catscpp"               , "match": "\\b(thread_local|extern|static|export)\\b"},
                 {"name": "storage.modifier.const.expr.catscpp"            , "match": "\\bconstexpr\\b"},
                 {"name": "storage.modifier.const.eval.catscpp"            , "match": "\\bconsteval\\b"},
+                {"name": "storage.modifier.const.init.catscpp"            , "match": "\\bconstinit\\b"},
                 {"name": "storage.modifier.other.virt.catscpp"            , "match": "\\bvirtual\\b"},
                 {"name": "storage.modifier.other.explicit.catscpp"        , "match": "\\bexplicit\\b"},
                 {"name": "storage.modifier.other.inline.catscpp"          , "match": "\\binline\\b"},

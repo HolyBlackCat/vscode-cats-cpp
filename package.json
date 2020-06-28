@@ -2,7 +2,7 @@
     "name": "cats-cpp",
     "displayName": "Cat's C++",
     "description": "Better highlighting and a custom theme for C++",
-    "version": "0.0.24",
+    "version": "0.0.25",
     "publisher": "holyblackcat",
     "repository": {
 		"type": "git",
