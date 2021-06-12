@@ -24,7 +24,12 @@
         "editorOverviewRuler.infoForeground": "#3298d3bf",
         "editorOverviewRuler.findMatchForeground": "#ffaa00bf",
         "inputOption.activeBorder": "#99CAEB",
-        "inputOption.activeBackground": "#ceeafd"
+        "inputOption.activeBackground": "#ceeafd",
+        "list.activeSelectionForeground": "#363636",
+        "list.activeSelectionBackground": "#c0e1fc",
+        "focusBorder": "#0060c050",
+        "list.inactiveSelectionBackground": "#d8eaf7",
+        "list.focusHighlightForeground": "#0060c0",
     },
 	"tokenColors": [
         {
