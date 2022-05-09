@@ -30,6 +30,7 @@
         "focusBorder": "#0060c050",
         "list.inactiveSelectionBackground": "#d8eaf7",
         "list.focusHighlightForeground": "#0060c0",
+        "menu.separatorBackground": "#cccccc"
     },
 	"tokenColors": [
         {
