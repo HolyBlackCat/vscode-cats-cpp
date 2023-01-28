@@ -1,0 +1,28 @@
+#include <iostream>
+#include "foo.h"
+
+struct Bar : Foo
+{
+    float num = 42.f;
+
+    bool Subtract() override
+    {
+        num -= 0.1f;
+        if (num > 0)
+            return true;
+        num = 0;
+        return false;
+    }
+
+    /// Documentation comment.
+    void Reset()
+    {
+        // Regular comment.
+        num = 0;
+    }
+
+    [[nodiscard]] bool IsPositive() const
+    {
+        return num > 0;
+    }
+};

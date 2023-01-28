@@ -1,7 +1,6 @@
 A VSCode extension providing a custom C++ grammar, and a light color theme tailored to this grammar (based on the built-in `Light+`).
 
 ![](notes/demo.png)<br>
-<sup>(font: [Monocat 6x12](https://github.com/HolyBlackCat/monocat-fonts))</sup>
 
 **Goals for the grammar:**
 
