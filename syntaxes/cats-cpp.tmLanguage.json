@@ -206,7 +206,7 @@
                 },
                 {
                     "name": "meta.pp.line.define.catscpp",
-                    "begin": "(#)\\s*(define)(?:\\s*([^(\\s]+)(?:(\\()([^)]*)(\\)))?)?",
+                    "begin": "(#)\\s*(define)\\b(?:\\s*([^(\\s]+)(?:(\\()([^)]*)(\\)))?)?",
                     "end": "\\n",
                     "beginCaptures":
                     {
@@ -221,7 +221,7 @@
                 },
                 {
                     "name": "meta.pp.line.include.catscpp",
-                    "begin": "(#)\\s*(include)",
+                    "begin": "(#)\\s*(include)\\b",
                     "end": "\\n",
                     "beginCaptures":
                     {
