@@ -49,8 +49,8 @@
                 {
                     "name": "meta.attribute.region.catscpp",
                     "contentName": "meta.attribute.content.catscpp",
-                    "begin": "(\\[\\[)",
-                    "end": "(\\]\\])",
+                    "begin": "(\\[\\s*\\[)",
+                    "end": "(\\]\\s*\\])",
                     "captures": {"1":{"name":"meta.attribute.bracket.catscpp"}},
                     "patterns": [{"include": "#generic"}, {"include": "#attribs"}]
                 },
