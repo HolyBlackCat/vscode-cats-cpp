@@ -295,7 +295,9 @@ fff
 #define   FOO 123  \
 fff
 fff
+#define   FOO(a,b,c) 123#45
 #define   FOO(a,b,c) 123##45
+#define   FOO(a,b,c) 123###45 // Wrong number of `#`s.
 #undef
 #include "ff"
 #include <ff>

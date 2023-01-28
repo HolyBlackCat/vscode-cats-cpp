@@ -116,6 +116,15 @@
 			}
         },
         {
+			"name": "Preprocessor (operators)",
+			"scope": [
+				"keyword.operator.symbol.pp"
+			],
+			"settings": {
+				"foreground": "#a55d00"
+			}
+        },
+        {
 			"name": "Preprocessor (directive body)",
 			"scope": [
 				"meta.pp.line"

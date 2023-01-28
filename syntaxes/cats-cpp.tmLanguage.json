@@ -157,8 +157,8 @@
         "in_pp_macro": {
             "patterns" : [
                 {"name": "constant.language.macro.in_macro_def.catscpp", "match": "\\b(__VA_ARGS__|__VA_OPT__)\\b"},
-                {"name": "keyword.operator.symbol.pp.hashhash.catscpp", "match": "##"},
-                {"name": "keyword.operator.symbol.pp.hash.catscpp", "match": "#"}
+                {"name": "keyword.operator.symbol.pp.hashhash.catscpp", "match": "(?<!#)##(?!#)"},
+                {"name": "keyword.operator.symbol.pp.hash.catscpp", "match": "(?<!#)#(?!#)"}
             ]
         },
         "in_pp_directives": {
