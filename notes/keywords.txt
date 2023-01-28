@@ -313,6 +313,7 @@ fff
 #invalid foo // 123
 
 f123foo
+f0b010101foo
 f0123foo
 f0x123foo
 f1e23foo
@@ -332,8 +333,14 @@ f0x10.p-23foo
 f0x.10p23foo
 f0x10.10p23foo
 
+1
+1.0
+1.0f
+1.f
+
+
 112233foo
-0112233foo
+0b010101foo
 0112233foo
 0x112233foo
 102030e405060foo
@@ -374,22 +381,38 @@ f0x10.10p23foo
 0x.10'fF'30p40'50'60foo
 0x10'fF'30.10'fF'30p40'50'60foo
 
+12345km
+12345sec
+12345_km
+12345_sec
+
+float alpha = 1.f;
+
+if (x == 1.f)
+{...}
+if (x == 1.0f)
+{...}
+if (x == 0x123LLU)
+{...}
+
 '123'foo
 "123"foo
 
-  'fdsa'_x f
- L'fdsa'_x f
-u8'fdsa'_x f
- u'fdsa'_x f
- U'fdsa'_x f
-xx'fdsa'_x f
+"foo"_format()
 
-  "fdsa"_x f
- L"fdsa"_x f
-u8"fdsa"_x f
- u"fdsa"_x f
- U"fdsa"_x f
-xx"fdsa"_x f
+  'fdsa'_foo f
+ L'fdsa'_foo f
+u8'fdsa'_foo f
+ u'fdsa'_foo f
+ U'fdsa'_foo f
+xx'fdsa'_foo f
+
+  "fdsa"_foo f
+ L"fdsa"_foo f
+u8"fdsa"_foo f
+ u"fdsa"_foo f
+ U"fdsa"_foo f
+xx"fdsa"_foo f
 
   R"(fdsa)"_x f
  LR"(fdsa)"_x f

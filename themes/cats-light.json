@@ -322,7 +322,12 @@
 				"constant.other.suffix"
 			],
 			"settings": {
-				"foreground": "#0a8488"
+				// "foreground": "#c7580f"
+				"foreground": "#d35005"
+				// "foreground": "#c24700"
+				// "foreground": "#05423a"
+				// "foreground": "#1c8aac"
+				// "foreground": "#058516"
 			}
         },
 	]
