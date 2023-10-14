@@ -395,6 +395,52 @@ if (x == 1.0f)
 if (x == 0x123LLU)
 {...}
 
+"foo\nfoo"
+
+"foo\0foo"
+"foo\01foo"
+"foo\012foo"
+"foo\0123foo" // 3 octal chars max.
+
+"foo\x"
+"foo\x1"
+"foo\x12"
+"foo\x123" // Not displaying an error here, since longer sequences could be valid for wide strings, and I can't be bothered to detect string width. (Which is impossible with non-portable size of wchar_t anyway?)
+"foo\x1234"
+
+"foo\u1x"
+"foo\u12x"
+"foo\u123x"
+"foo\u1234x"
+"foo\u12345x"
+"foo\u123456x"
+
+"foo\Ux"
+"foo\U1234567x"
+"foo\U12345678x"
+"foo\U123456789x"
+
+"foo\o{}9x"
+"foo\o{1}9x"
+"foo\o{1234567}9x"
+"foo\o{12345678}9x"
+"foo\o{12349}9x"
+
+"foo\x{}9x"
+"foo\x{1}9x"
+"foo\x{1Ffa09A}9x"
+"foo\x{1Ffa09Ax}9x"
+
+"foo\u{}9x"
+"foo\u{1}9x"
+"foo\u{1Ffa09A}9x"
+"foo\u{1Ffa09Ax}9x"
+
+"foo\N9x"
+"foo\N{hello world}foo"
+"foo\N{}foo"
+
+
 '123'foo
 "123"foo
 
