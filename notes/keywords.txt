@@ -270,14 +270,19 @@ keyword.other.pp
             __DATE__
             __TIME__
             __STDCPP_DEFAULT_NEW_ALIGNMENT__
+            __STDCPP_FLOAT16_T__
+            __STDCPP_FLOAT32_T__
+            __STDCPP_FLOAT64_T__
+            __STDCPP_FLOAT128_T__
+            __STDCPP_BFLOAT16_T__
         .optional
             __STDC__
             __STDC_VERSION__
             __STDC_ISO_10646__
             __STDC_MB_MIGHT_NEQ_WC__
-            __STDCPP_STRICT_POINTER_SAFETY__
             __STDCPP_THREADS__
             __cpp_[A-Za-z0-9_]* (__cpp_whatever)
+            __STDCPP_STRICT_POINTER_SAFETY__ // Removed from the standard?
 
 //fff \
 fff
@@ -292,6 +297,7 @@ fff
 #ifdef    FOO
 #ifndef   FOO
 #define
+#define   FOO foo 42
 #define   FOO 123  \
 fff
 fff
@@ -304,13 +310,69 @@ fff
 #include
 #line
 #error
-#pragma
+#pragma once
+
+#elifdef
+#elifndef
+
+// Message is highlighted as if it was a raw string.
+#error foo
+// Quoted string has no special highlighting. GCC doesn't like unmatched quotes here, but is fine with no quotes at all.
+// All other compilers don't care whatsoever. Notably, no compiler seems to care about unmatched `'` apostrophes.
+#error "foo"
+
+#invalid
+
+const_cast // A keyword to compare colors.
+#if defined // Error.
+#if defined FOO
+__has_include __has_cpp_attribute // Not highlighted on their own.
+#if __has_include || __has_cpp_attribute // Not even like this
+#if __has_include() || __has_cpp_attribute() // This is ok though.
+#if defined(__has_include) || defined(__has_cpp_attribute) // Different highlighting here.
+maybe_unused // Not highlighted.
+#if __has_cpp_attribute(maybe_unused) // Highlighted.
+#if __has_include(maybe_unused) // Not here.
+#if __has_include(<foo>) // Highlighted!
+#if __has_include("foo") // This too!
+#if __has_cpp_attribute("foo") // Not this though.
+#if <foo> // Neither this.
+#if "foo" // Not this.
+
+#ifdef __DATE__
+#ifdef __has_include
+#ifdef __has_cpp_attribute
+#if 42 + 43 + 12.3f // Numbers are still highlighted, but not floating-point ones though (note the black dot).
+#if
+#if defined __has_include
+#if defined __has_cpp_attribute
+#if defined(FOO)
+#if defined ( FOO )
+#if defined(__has_include)
+#if defined(__has_cpp_attribute)
+#if defined ( __has_cpp_attribute )
+
+// Broken by newline.
+#if defined
+    __has_cpp_attribute
+// Incorrectly not highlighted, but ok.
+#if defined \
+    __has_cpp_attribute
+// Also broken by newline.
+#if defined ( __has_cpp_attribute
+    __has_cpp_attribute )
+// Incorrectly not highlighted, but ok.
+#if defined ( __has_cpp_attribute \
+    __has_cpp_attribute )
 
 #pragma once
 
 #include <iostream> // 123
 #include "iostream" // 123
 #invalid foo // 123
+
+// This shouldn't highlight as include.
+#if BETTER_INIT_CXX_STANDARD < 17 || (defined(_MSC_VER) && BETTER_INIT_CXX_STANDARD >= 20)
 
 f123foo
 f0b010101foo
