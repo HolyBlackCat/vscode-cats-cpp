@@ -5,7 +5,7 @@
 			"include": "#generic"
         },
         {
-            "include": "#pp"
+            "include": "#preprocessor"
         }
 	],
 	"repository": {
@@ -68,23 +68,25 @@
                 {"name": "keyword.control.oneline.return.catscpp"         , "match": "\\breturn\\b"},
                 {"name": "keyword.control.oneline.throw.catscpp"          , "match": "\\bthrow\\b"},
                 {"name": "keyword.operator.word.catscpp"                  , "match": "\\b(and|and_eq|bitand|bitor|compl|not|not_eq|or|or_eq|xor|xor_eq)\\b"},
-                {"name": "keyword.operator.symbol.scope.catscpp"          , "match": "::"},
-                {"name": "keyword.operator.symbol.member.catscpp"         , "match": "(\\.|->)"},
-                {"name": "keyword.operator.symbol.other.catscpp"          , "match": "[\\/!~&^|*%<>=+-]"},
-                {"name": "keyword.operator.symbol.ternary.catscpp"        , "match": "[\\?:]"},
-                {"name": "keyword.operator.symbol.comma.catscpp"          , "match": ","},
-                {"name": "keyword.operator.symbol.bracket.round.catscpp"  , "match": "[()]"},
-                {"name": "keyword.operator.symbol.bracket.curly.catscpp"  , "match": "[{}]"},
-                {"name": "keyword.operator.symbol.bracket.square.catscpp" , "match": "[\\[\\]]"},
+                {"name": "punctuation.scope.catscpp"          , "match": "::"},
+                {"name": "punctuation.member.catscpp"         , "match": "(\\.|->)"},
+                {"name": "punctuation.other.catscpp"          , "match": "[\\/!~&^|*%<>=+-]"},
+                {"name": "punctuation.ternary.catscpp"        , "match": "[\\?:]"},
+                {"name": "punctuation.comma.catscpp"          , "match": ","},
+                {"name": "punctuation.bracket.round.catscpp"  , "match": "[()]"},
+                {"name": "punctuation.bracket.curly.catscpp"  , "match": "[{}]"},
+                {"name": "punctuation.bracket.square.catscpp" , "match": "[\\[\\]]"},
                 {"name": "keyword.other.memory.catscpp"                   , "match": "\\b(new|delete)\\b"},
-                {"name": "keyword.other.co.catscpp"                       , "match": "\\b(co_await|co_return|co_yield)\\b"},
-                {"name": "keyword.other.type_property.catscpp"            , "match": "\\b(alignof|sizeof)\\b"},
-                {"name": "keyword.other.typeid.catscpp"                   , "match": "\\btypeid\\b"},
+                {"name": "keyword.other.co.await.catscpp"                 , "match": "\\bco_await\\b"},
+                {"name": "keyword.other.co.return.catscpp"                , "match": "\\bco_return\\b"},
+                {"name": "keyword.other.co.yield.catscpp"                 , "match": "\\bco_yield\\b"},
+                {"name": "keyword.other.type_property.alignof.catscpp"    , "match": "\\balignof\\b"},
+                {"name": "keyword.other.type_property.sizeof.catscpp"     , "match": "\\bsizeof\\b"},
+                {"name": "keyword.other.type_property.typeid.catscpp"     , "match": "\\btypeid\\b"},
                 {"name": "keyword.other.decltype.catscpp"                 , "match": "\\bdecltype\\b"},
                 {"name": "keyword.other.cast.const.catscpp"               , "match": "\\bconst_cast\\b"},
                 {"name": "keyword.other.cast.dyn.catscpp"                 , "match": "\\bdynamic_cast\\b"},
                 {"name": "keyword.other.cast.re.catscpp"                  , "match": "\\breinterpret_cast\\b"},
-                {"name": "keyword.other.cast.static.catscpp"              , "match": "\\bstatic_cast\\b"},
                 {"name": "keyword.other.cast.static.catscpp"              , "match": "\\bstatic_cast\\b"},
                 {"name": "keyword.other.label.control.catscpp"            , "match": "\\b(case|default)\\b"},
                 {"name": "keyword.other.label.access.catscpp"             , "match": "\\b(private|protected|public)\\b"},
@@ -95,7 +97,7 @@
                 {"name": "keyword.other.special.friend.catscpp"           , "match": "\\bfriend\\b"},
                 {"name": "keyword.other.special.static_assert.catscpp"    , "match": "\\bstatic_assert\\b"},
                 {"name": "keyword.other.reserved.catscpp"                 , "match": "\\bregister\\b"},
-                {"name": "keyword.other.pp.pragma_expr.catscpp"           , "match": "\\b_Pragma\\b"},
+                {"name": "keyword.other.preprocessor.pragma_expr.catscpp" , "match": "\\b_Pragma\\b"},
                 {"name": "storage.type.type.auto.catscpp"                 , "match": "\\bauto\\b"},
                 {"name": "storage.type.type.void.catscpp"                 , "match": "\\bvoid\\b"},
                 {"name": "storage.type.type.sign.catscpp"                 , "match": "\\b(signed|unsigned)\\b"},
@@ -112,7 +114,8 @@
                 {"name": "storage.modifier.other.inline.catscpp"          , "match": "\\binline\\b"},
                 {"name": "storage.modifier.other.mutable.catscpp"         , "match": "\\bmutable\\b"},
                 {"name": "storage.modifier.other.alignas.catscpp"         , "match": "\\balignas\\b"},
-                {"name": "constant.language.bool.catscpp"                 , "match": "\\b(true|false)\\b"},
+                {"name": "constant.language.bool.true.catscpp"            , "match": "\\btrue\\b"},
+                {"name": "constant.language.bool.false.catscpp"           , "match": "\\bfalse\\b"},
                 {"name": "constant.language.this.catscpp"                 , "match": "\\bthis\\b"},
                 {"name": "constant.language.nullptr.catscpp"              , "match": "\\bnullptr\\b"},
                 {"name": "keyword.other.context.override.catscpp"         , "match": "\\boverride\\b"},
@@ -130,7 +133,10 @@
                 {"name": "storage.modifier.attrib.nodiscard.catscpp"            , "match": "\\bnodiscard\\b"},
                 {"name": "storage.modifier.attrib.unused.catscpp"               , "match": "\\bmaybe_unused\\b"},
                 {"name": "storage.modifier.attrib.expr.catscpp"                 , "match": "\\b(likely|unlikely)\\b"},
-                {"name": "storage.modifier.attrib.no_uniq_addr.catscpp"         , "match": "\\bno_unique_address\\b"}
+                {"name": "storage.modifier.attrib.no_uniq_addr.catscpp"         , "match": "\\bno_unique_address\\b"},
+                {"name": "storage.modifier.attrib.expect.likely.catscpp"        , "match": "\\blikely\\b"},
+                {"name": "storage.modifier.attrib.expect.unlikely.catscpp"      , "match": "\\bunlikely\\b"},
+                {"name": "storage.modifier.attrib.assume.catscpp"               , "match": "\\bassume\\b"}
             ]
         },
         "pp_predefined": {
@@ -170,140 +176,140 @@
         "in_pp_macro": {
             "patterns" : [
                 {"name": "constant.language.macro.in_macro_def.catscpp", "match": "\\b(__VA_ARGS__|__VA_OPT__)\\b"},
-                {"name": "keyword.operator.symbol.pp.hashhash.catscpp", "match": "(?<!#)##(?!#)"},
-                {"name": "keyword.operator.symbol.pp.hash.catscpp", "match": "(?<!#)#(?!#)"}
+                {"name": "punctuation.preprocessor.hashhash.catscpp", "match": "(?<!#)##(?!#)"},
+                {"name": "punctuation.preprocessor.hash.catscpp", "match": "(?<!#)#(?!#)"}
             ]
         },
         "in_pp_expr": {
             "patterns" : [
                 {
-                    "name": "entity.pp.expr.defined.region.catscpp",
-                    "contentName": "entity.pp.expr.defined.content.catscpp",
+                    "name": "entity.preprocessor.expr.defined.region.catscpp",
+                    "contentName": "entity.preprocessor.expr.defined.content.catscpp",
                     "begin": "(defined)\\s*\\((?=\\s*[A-Za-z0-9_]+\\s*\\))",
                     "end": "(?:\\)|(?=\\n))",
-                    "captures": {"1":{"name":"keyword.operator.word.pp.defined.catscpp"}},
+                    "captures": {"1":{"name":"keyword.operator.word.preprocessor.defined.catscpp"}},
                     "patterns": [{"include": "#line_cont"}, {"include": "#pp_predefined"}, {"include": "#pp_quasi_predefined"}]
                 },
                 {
-                    "name": "entity.pp.expr.defined.region.catscpp",
-                    "contentName": "entity.pp.expr.defined.content.catscpp",
+                    "name": "entity.preprocessor.expr.defined.region.catscpp",
+                    "contentName": "entity.preprocessor.expr.defined.content.catscpp",
                     "begin": "(defined)\\s+(?=[A-Za-z0-9_])",
                     "end": "(?=[^A-Za-z0-9_])",
-                    "captures": {"1":{"name":"keyword.operator.word.pp.defined.catscpp"}},
+                    "captures": {"1":{"name":"keyword.operator.word.preprocessor.defined.catscpp"}},
                     "patterns": [{"include": "#line_cont"}, {"include": "#pp_predefined"}, {"include": "#pp_quasi_predefined"}]
                 },
                 {
-                    "name": "entity.pp.expr.has_include.region.catscpp",
-                    "contentName": "entity.pp.expr.has_include.content.catscpp",
+                    "name": "entity.preprocessor.expr.has_include.region.catscpp",
+                    "contentName": "entity.preprocessor.expr.has_include.content.catscpp",
                     "begin": "(__has_include)\\s*\\(",
                     "end": "\\)",
-                    "captures": {"1":{"name":"keyword.operator.word.pp.has_include.catscpp"}},
+                    "captures": {"1":{"name":"keyword.operator.word.preprocessor.has_include.catscpp"}},
                     "patterns": [{"include": "#line_cont"}, {"include": "#pp_includes"}]
                 },
                 {
-                    "name": "entity.pp.expr.has_cpp_attribute.region.catscpp",
-                    "contentName": "entity.pp.expr.has_cpp_attribute.content.catscpp",
+                    "name": "entity.preprocessor.expr.has_cpp_attribute.region.catscpp",
+                    "contentName": "entity.preprocessor.expr.has_cpp_attribute.content.catscpp",
                     "begin": "(__has_cpp_attribute)\\s*\\(",
                     "end": "\\)",
-                    "captures": {"1":{"name":"keyword.operator.word.pp.has_cpp_attribute.catscpp"}},
+                    "captures": {"1":{"name":"keyword.operator.word.preprocessor.has_cpp_attribute.catscpp"}},
                     "patterns": [{"include": "#line_cont"}, {"include": "#attribs"}]
                 }
             ]
         },
-        "pp": {
+        "preprocessor": {
             "patterns": [
                 {
-                    "name": "meta.pp.line.catscpp",
+                    "name": "meta.preprocessor.line.catscpp",
                     "begin": "(#)\\s*(if|elif)\\b",
                     "end": "\\n",
                     "beginCaptures":
                     {
-                        "1": {"name": "keyword.operator.pp.hash.catscpp"},
-                        "2": {"name": "keyword.other.pp.catscpp"}
+                        "1": {"name": "keyword.other.preprocessor.hash.catscpp"},
+                        "2": {"name": "keyword.other.preprocessor.catscpp"}
                     },
                     "patterns": [{"include": "#in_pp_expr"}, {"include": "#expr_maybe_pp"}]
                 },
                 {
-                    "name": "meta.pp.line.catscpp",
-                    "contentName": "meta.pp.macro_name.catscpp",
+                    "name": "meta.preprocessor.line.catscpp",
+                    "contentName": "meta.preprocessor.macro_name.catscpp",
                     "begin": "(#)\\s*(ifdef|ifndef|undef|elifdef|elifndef)\\b",
                     "end": "\\n",
                     "beginCaptures":
                     {
-                        "1": {"name": "keyword.operator.pp.hash.catscpp"},
-                        "2": {"name": "keyword.other.pp.catscpp"}
+                        "1": {"name": "keyword.other.preprocessor.hash.catscpp"},
+                        "2": {"name": "keyword.other.preprocessor.catscpp"}
                     },
                     "patterns": [{"include": "#line_cont"}, {"include": "#comments"}, {"include": "#pp_predefined"}, {"include": "#pp_quasi_predefined"}]
                 },
                 {
-                    "name": "meta.pp.line.pragma.catscpp",
-                    "contentName": "meta.pp.pragma_value.catscpp",
+                    "name": "meta.preprocessor.line.pragma.catscpp",
+                    "contentName": "meta.preprocessor.pragma_value.catscpp",
                     "begin": "(#)\\s*(pragma)\\b",
                     "end": "\\n",
                     "beginCaptures":
                     {
-                        "1": {"name": "keyword.operator.pp.hash.pragma.catscpp"},
-                        "2": {"name": "keyword.other.pp.pragma.catscpp"}
+                        "1": {"name": "keyword.other.preprocessor.hash.pragma.catscpp"},
+                        "2": {"name": "keyword.other.preprocessor.pragma.catscpp"}
                     },
                     "patterns": [{"include": "#line_cont"}, {"include": "#comments"}, {"include": "#pp_predefined"}]
                 },
                 {
-                    "name": "meta.pp.line.define.catscpp",
+                    "name": "meta.preprocessor.line.define.catscpp",
                     "begin": "(#)\\s*(define)\\b(?:\\s*([^(\\s]+)(?:(\\()([^)]*)(\\)))?)?",
                     "end": "\\n",
                     "beginCaptures":
                     {
-                        "1": {"name": "keyword.operator.pp.hash.define.catscpp"},
-                        "2": {"name": "keyword.other.pp.catscpp"},
-                        "3": {"name": "meta.pp.macro_name.define.catscpp"},
-                        "4": {"name": "keyword.operator.pp.define_paren.catscpp"},
-                        "5": {"name": "meta.pp.macro_define_params.catscpp"},
-                        "6": {"name": "keyword.operator.pp.define_paren.catscpp"}
+                        "1": {"name": "keyword.other.preprocessor.hash.define.catscpp"},
+                        "2": {"name": "keyword.other.preprocessor.catscpp"},
+                        "3": {"name": "meta.preprocessor.macro_name.define.catscpp"},
+                        "4": {"name": "keyword.operator.preprocessor.define_paren.catscpp"},
+                        "5": {"name": "meta.preprocessor.macro_define_params.catscpp"},
+                        "6": {"name": "keyword.operator.preprocessor.define_paren.catscpp"}
                     },
                     "patterns": [{"include": "#in_pp_macro"}, {"include": "#generic"}]
                 },
                 {
-                    "name": "meta.pp.line.include.catscpp",
+                    "name": "meta.preprocessor.line.include.catscpp",
                     "begin": "(#)\\s*(include)\\b",
                     "end": "\\n",
                     "beginCaptures":
                     {
-                        "1": {"name": "keyword.operator.pp.hash.include.catscpp"},
-                        "2": {"name": "keyword.other.pp.include.catscpp"}
+                        "1": {"name": "keyword.other.preprocessor.hash.include.catscpp"},
+                        "2": {"name": "keyword.other.preprocessor.include.catscpp"}
                     },
                     "patterns": [{"include": "#pp_includes"}, {"include": "#line_cont"}, {"include": "#comments"}, {"include": "#pp_predefined"}]
                 },
                 {
-                    "name": "meta.pp.line.error.catscpp",
-                    "contentName": "meta.pp.error_value.catscpp",
+                    "name": "meta.preprocessor.line.error.catscpp",
+                    "contentName": "meta.preprocessor.error_value.catscpp",
                     "begin": "(#)\\s*(error)\\b",
                     "end": "\\n",
                     "beginCaptures":
                     {
-                        "1": {"name": "keyword.operator.pp.hash.catscpp"},
-                        "2": {"name": "keyword.other.pp.catscpp"}
+                        "1": {"name": "keyword.other.preprocessor.hash.catscpp"},
+                        "2": {"name": "keyword.other.preprocessor.catscpp"}
                     },
                     "patterns": [{"include": "#comments"}]
                 },
                 {
-                    "name": "meta.pp.line.catscpp",
+                    "name": "meta.preprocessor.line.catscpp",
                     "begin": "(#)\\s*(else|endif|line)\\b",
                     "end": "\\n",
                     "beginCaptures":
                     {
-                        "1": {"name": "keyword.operator.pp.hash.catscpp"},
-                        "2": {"name": "keyword.other.pp.catscpp"}
+                        "1": {"name": "keyword.other.preprocessor.hash.catscpp"},
+                        "2": {"name": "keyword.other.preprocessor.catscpp"}
                     },
                     "patterns": [{"include": "#comments"}]
                 },
                 {
-                    "name": "meta.pp.line.unknown.catscpp",
+                    "name": "meta.preprocessor.line.unknown.catscpp",
                     "begin": "(#)(?:\\s*([^\\s]+))?",
                     "end": "\\n",
                     "beginCaptures":
                     {
-                        "1": {"name": "keyword.operator.pp.hash.unknown.catscpp"},
-                        "2": {"name": "keyword.other.pp.unknown.catscpp"}
+                        "1": {"name": "keyword.other.preprocessor.hash.unknown.catscpp"},
+                        "2": {"name": "keyword.other.preprocessor.unknown.catscpp"}
                     },
                     "patterns": [{"include": "#pp_includes"}, {"include": "#generic"}]
                 }

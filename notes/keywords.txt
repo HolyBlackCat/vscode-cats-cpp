@@ -35,52 +35,6 @@ keyword
             or_eq
             xor
             xor_eq
-        .symbol
-            .scope
-                ::
-            .member
-                .
-                ->
-            .other
-                ++
-                --
-                !
-                &&
-                ||
-                ~
-                &
-                ^
-                |
-                <<
-                >>
-                *
-                /
-                %
-                +
-                -
-                <=>
-                <
-                <=
-                >
-                >=
-                ==
-                !=
-                =
-            .ternary
-                ?
-                :
-            .comma
-                ,
-            .bracket
-                .round
-                    (
-                    )
-                .curly
-                    {
-                    }
-                .square
-                    [
-                    ]
     .other
         .memory
             new
@@ -128,6 +82,53 @@ keyword
                 static_assert
         .reserved
             register
+
+.punctuation
+    .scope
+        ::
+    .member
+        .
+        ->
+    .other
+        ++
+        --
+        !
+        &&
+        ||
+        ~
+        &
+        ^
+        |
+        <<
+        >>
+        *
+        /
+        %
+        +
+        -
+        <=>
+        <
+        <=
+        >
+        >=
+        ==
+        !=
+        =
+    .ternary
+        ?
+        :
+    .comma
+        ,
+    .bracket
+        .round
+            (
+            )
+        .curly
+            {
+            }
+        .square
+            [
+            ]
 
 storage
     .type
@@ -234,11 +235,16 @@ storage.modifier
             unlikely
         .no_uniq_addr
             no_unique_address
+        .expect
+            .likely
+            .unlikely
+        .assume
+            .assume
 ]]
 
 ------------- Preprocessor -------------
 
-keyword.other.pp
+keyword.other.preprocessor
     .dir
         #if
         #elif

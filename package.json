@@ -1,9 +1,10 @@
 {
     "name": "cats-cpp",
-    "displayName": "Cat's C++",
-    "description": "Better highlighting and a custom theme for C++",
-    "version": "0.0.29",
+    "displayName": "Clean C++ Syntax",
+    "description": "An alternative no-nonsense C++ syntax",
+    "version": "0.0.32",
     "publisher": "holyblackcat",
+    "icon": "logo.png",
     "repository": {
 		"type": "git",
 		"url": "https://github.com/HolyBlackCat/vscode-cats-cpp"
@@ -28,7 +29,7 @@
         }],
 		"themes": [
             {
-                "label": "Cat's Light",
+                "label": "Clean C++ Light",
                 "uiTheme": "vs",
                 "path": "./themes/cats-light.json"
             }
