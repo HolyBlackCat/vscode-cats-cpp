@@ -272,7 +272,6 @@
             "name": "Numbers",
             "scope": [
                 "constant.numeric",
-                "constant.character",
                 "constant"
             ],
             "settings": {
@@ -297,7 +296,7 @@
         {
             "name": "Characters",
             "scope": [
-                "constant.character",
+                "string.quoted.single",
             ],
             "settings": {
                 "foreground": "#008f99"
