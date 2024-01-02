@@ -1,5 +1,7 @@
 **An alternative no-nonsense C++ syntax.** And an opinionated light color theme designed to take advantage of it.
 
+![](/notes/demo.png)
+
 ### Why?
 
 The stock C++ grammar is a [huge 16kloc monstrosity](https://github.com/microsoft/vscode/blob/main/extensions/cpp/syntaxes/cpp.tmLanguage.json) that tries to be too clever for my taste. It tries to parse various C++ constructs to provide a poor man's semantic highlighting, which it has no business doing - that's a language server's job.
