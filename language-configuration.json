@@ -31,5 +31,34 @@
 			"start": "^\\s*//\\s*{[^}]*$",
 			"end": "^\\s*//\\s*}[^{]*$"
         }
-    }
+    },
+
+    "indentationRules": {
+        // Indent if the line ends with `[{(` and then only whitespace or a `//` after whitespace.
+        "increaseIndentPattern": "[[{(]\\s*(?:$|//)",
+        // Unindent if the line begins with a `]})`.
+        "decreaseIndentPattern": "^\\s*[\\]})]",
+        // Indent single line only if the previous line starts with one of the keywords, and does NOT end with `;`.
+        "indentNextLinePattern": "^\\s*(?:if|else|for|while|do)\\b.*[^;]$"
+    },
+
+    "onEnterRules": [
+        {
+            // When inside `[]`,`{}`,`()`, expand them on enter.
+            "beforeText": "[[{(]",
+            "afterText": "[\\]})]",
+            "action": {
+                "indent": "indentOutdent",
+            }
+        }
+        // This seems to be unnecessary, as it happens automatically:
+        // {
+        //     // If this is a single-line body without braces, outdent it.
+        //     "previousLineText": "^\\s*(?:if|else|for|while|do)\\b.*[^;]$",
+        //     "beforeText": "",
+        //     "action": {
+        //         "indent": "outdent",
+        //     }
+        // }
+    ]
 }
