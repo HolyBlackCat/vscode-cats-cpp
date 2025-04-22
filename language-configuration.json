@@ -43,17 +43,34 @@
     },
 
     "onEnterRules": [
+        // When inside `[]`,`{}`,`()`, expand them on enter.
+        // Note `^`,`$`. Otherwise they are searched anywhere in the half-line.
         {
-            // When inside `[]`,`{}`,`()`, expand them on enter.
-            "beforeText": "[[{(]",
-            "afterText": "[\\]})]",
+            "beforeText": "[[{(]$",
+            "afterText": "^[\\]})]",
             "action": {
                 "indent": "indentOutdent",
             }
+        },
+        // Continue comments: documentation.
+        {
+            "beforeText": "^\\s*///",
+            "action": {
+                "indent": "none",
+                "appendText": "/// "
+            }
+        },
+        // Continue comments: regular.
+        {
+            "beforeText": "^\\s*//",
+            "action": {
+                "indent": "none",
+                "appendText": "// "
+            }
         }
-        // This seems to be unnecessary, as it happens automatically:
+        // If this is a single-line body without braces, outdent it.
+        // This seems to be unnecessary, as it happens automatically.
         // {
-        //     // If this is a single-line body without braces, outdent it.
         //     "previousLineText": "^\\s*(?:if|else|for|while|do)\\b.*[^;]$",
         //     "beforeText": "",
         //     "action": {
