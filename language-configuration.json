@@ -34,8 +34,9 @@
     },
 
     "indentationRules": {
-        // Indent if the line ends with `[{(` and then only whitespace or a `//` after whitespace.
-        "increaseIndentPattern": "[[{(]\\s*(?:$|//)",
+        // Indent if the line ends with `[{(` and then only whitespace, or a `//` after whitespace,
+        //   or `\` after whitespace and immediately the end of the line
+        "increaseIndentPattern": "[[{(]\\s*(?:$|//|\\\\\\s*$)",
         // Unindent if the line begins with a `]})`.
         "decreaseIndentPattern": "^\\s*[\\]})]",
         // Indent single line only if the previous line starts with one of the keywords, and does NOT end with `;`.
