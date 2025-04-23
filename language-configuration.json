@@ -53,24 +53,6 @@
                 "indent": "indentOutdent",
             }
         },
-        // Continue comments: documentation.
-        {
-            "beforeText": "^\\s*///",
-            "afterText": ".", // Anything other than the end of the line.
-            "action": {
-                "indent": "none",
-                "appendText": "/// "
-            }
-        },
-        // Continue comments: regular.
-        {
-            "beforeText": "^\\s*//",
-            "afterText": ".", // Anything other than the end of the line.
-            "action": {
-                "indent": "none",
-                "appendText": "// "
-            }
-        },
         // Negate auto-indent after `if (...)` and such, which is caused by our `indentNextLinePattern` above.
         // We still want to keep the `indentNextLinePattern` to allow auto-indent on paste.
         {
@@ -78,9 +60,9 @@
             "action": {
                 "indent": "none",
             }
-        }
-        // If this is a single-line body without braces, outdent it.
-        // This seems to be unnecessary, as it happens automatically.
+        },
+        // Auto-indent single-line `if (...)` and such. Firstly this happens automatically because of our `indentNextLinePattern`,
+        //   and secondly we don't actually want this, so we explicitly negate it using the rule above.
         // {
         //     "previousLineText": "^\\s*(?:if|else|for|while|do)\\b.*(?<!;)$",
         //     "beforeText": "",
@@ -88,5 +70,39 @@
         //         "indent": "outdent",
         //     }
         // }
+        // Continue comments if we're in the middle of the line. Note that we need to test `///` before `//` here.
+        {
+            "beforeText": "^\\s*///",
+            "afterText": ".",
+            "action": {
+                "indent": "none",
+                "appendText": "/// "
+            }
+        },
+        {
+            "beforeText": "^\\s*//",
+            "afterText": ".",
+            "action": {
+                "indent": "none",
+                "appendText": "// "
+            }
+        },
+        // Continue comments if we're at the end of the line and have a comma there. Note that we need to test `///` before `//` here.
+        {
+            "beforeText": "^\\s*///.*,$",
+            "afterText": "^$",
+            "action": {
+                "indent": "none",
+                "appendText": "/// "
+            }
+        },
+        {
+            "beforeText": "^\\s*//.*,$",
+            "afterText": "^$",
+            "action": {
+                "indent": "none",
+                "appendText": "// "
+            }
+        },
     ]
 }
