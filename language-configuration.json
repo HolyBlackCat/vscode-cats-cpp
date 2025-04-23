@@ -39,7 +39,8 @@
         // Unindent if the line begins with a `]})`.
         "decreaseIndentPattern": "^\\s*[\\]})]",
         // Indent single line only if the previous line starts with one of the keywords, and does NOT end with `;`.
-        "indentNextLinePattern": "^\\s*(?:if|else|for|while|do)\\b.*[^;]$"
+        // Using `(?<!;)` instead of `[^;]` to handle `else` properly (because it immediately has the end of the line after it).
+        "indentNextLinePattern": "^\\s*(?:if|else|for|while|do)\\b.*(?<!;)$"
     },
 
     "onEnterRules": [
@@ -55,6 +56,7 @@
         // Continue comments: documentation.
         {
             "beforeText": "^\\s*///",
+            "afterText": ".", // Anything other than the end of the line.
             "action": {
                 "indent": "none",
                 "appendText": "/// "
@@ -63,15 +65,24 @@
         // Continue comments: regular.
         {
             "beforeText": "^\\s*//",
+            "afterText": ".", // Anything other than the end of the line.
             "action": {
                 "indent": "none",
                 "appendText": "// "
+            }
+        },
+        // Negate auto-indent after `if (...)` and such, which is caused by our `indentNextLinePattern` above.
+        // We still want to keep the `indentNextLinePattern` to allow auto-indent on paste.
+        {
+            "beforeText": "^\\s*(?:if|else|for|while|do)\\b.*(?<!;)$",
+            "action": {
+                "indent": "none",
             }
         }
         // If this is a single-line body without braces, outdent it.
         // This seems to be unnecessary, as it happens automatically.
         // {
-        //     "previousLineText": "^\\s*(?:if|else|for|while|do)\\b.*[^;]$",
+        //     "previousLineText": "^\\s*(?:if|else|for|while|do)\\b.*(?<!;)$",
         //     "beforeText": "",
         //     "action": {
         //         "indent": "outdent",

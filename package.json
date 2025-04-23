@@ -2,7 +2,7 @@
     "name": "cats-cpp",
     "displayName": "Clean C++ Syntax",
     "description": "An alternative no-nonsense C++ syntax",
-    "version": "0.0.36",
+    "version": "0.0.37",
     "publisher": "holyblackcat",
     "icon": "logo.png",
     "repository": {
