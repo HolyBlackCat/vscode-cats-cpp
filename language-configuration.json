@@ -104,5 +104,16 @@
                 "appendText": "// "
             }
         },
+
+        // If this line ends with `\` and the previous one doesn't, add one level of indentation.
+        // We sadly can't express this in `indentationRules` as well.
+        {
+            "previousLineText": "[^\\\\]$",
+            "beforeText": "\\\\$",
+            "afterText": "^$",
+            "action": {
+                "indent": "indent"
+            }
+        }
     ]
 }
