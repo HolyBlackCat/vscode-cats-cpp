@@ -110,7 +110,6 @@
         {
             "previousLineText": "[^\\\\]$",
             "beforeText": "\\\\$",
-            "afterText": "^$",
             "action": {
                 "indent": "indent"
             }
