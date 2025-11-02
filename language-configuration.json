@@ -88,23 +88,6 @@
                 "appendText": "// "
             }
         },
-        // Continue comments if we're at the end of the line and have a comma there. Note that we need to test `///` before `//` here.
-        {
-            "beforeText": "^\\s*///.*,$",
-            "afterText": "^$",
-            "action": {
-                "indent": "none",
-                "appendText": "/// "
-            }
-        },
-        {
-            "beforeText": "^\\s*//.*,$",
-            "afterText": "^$",
-            "action": {
-                "indent": "none",
-                "appendText": "// "
-            }
-        },
 
         // If this line ends with `\` and the previous one doesn't, add one level of indentation.
         // We sadly can't express this in `indentationRules` as well.
